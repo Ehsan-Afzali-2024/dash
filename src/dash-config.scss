@@ -1,0 +1,372 @@
+@use "sass:map";
+
+//
+//   Dash
+//   A simple, lite-weight and powerful CSS framework
+//   version: 0.5.0
+
+//
+
+// ------ Prefix and postfix ------
+$-prefix: "-";
+
+// ------ Color variables ------
+$-blue: #1681df;
+$-aqua: #50cdff;
+$-cyan: #28e9e9;
+$-teal: #18af98;
+$-green: #2abb3b;
+$-lime: #44df07;
+$-olive: #b5d115;
+$-yellow: #ffe851;
+$-orange: #fd9c46;
+$-brown: #da421d;
+$-red: #ff4d4d;
+$-pink: #fc598f;
+$-fuchsia: #e61db7;
+$-purple: #b10dc9;
+$-maroon: #85144b;
+$-black: #222;
+$-gray: #888;
+$-white: #ddd;
+
+// ------ Gradient colors ------
+$-gradient-colors: (
+  "aqua": $-aqua,
+  "lime": $-lime,
+  "yellow": $-yellow,
+  "orange": $-orange,
+  "pink": $-pink,
+);
+
+// ------ Colors ------
+// The `$-colors-map` variable will fill based on `$-colors` variable.
+$-colors: (
+  "blue": $-blue,
+  "aqua": $-aqua,
+  "cyan": $-cyan,
+  "teal": $-teal,
+  "green": $-green,
+  "lime": $-lime,
+  "olive": $-olive,
+  "yellow": $-yellow,
+  "orange": $-orange,
+  "brown": $-brown,
+  "red": $-red,
+  "pink": $-pink,
+  "fuchsia": $-fuchsia,
+  "purple": $-purple,
+  "maroon": $-maroon,
+  "black": $-black,
+  "gray": $-gray,
+  "white": $-white,
+);
+
+// $-colors: (
+//   "default": $-white,
+//   "primary": $-blue,
+//   "secondary": $-pink,
+//   "secondary2": $-fuchsia,
+//   "secondary3": $-purple,
+//   "accent": $-olive,
+//   "accent2": $-teal,
+//   "success": $-green,
+//   "success2": $-lime,
+//   "info": $-aqua,
+//   "info2": $-cyan,
+//   "warning": $-orange,
+//   "warning2": $-yellow,
+//   "error": $-red,
+//   "error2": $-brown,
+//   "error3": $-maroon,
+//   "neutral": $-gray,
+//   "neutral2": $-black,
+// );
+
+// ------ Flexbox variables -----
+$-grid-columns-count: 12;
+$-flex-scales: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$-orders: (
+  zero: 0,
+  1-front: 1,
+  2-front: 2,
+  3-front: 3,
+  4-front: 4,
+  5-front: 5,
+  6-front: 6,
+  7-front: 7,
+  8-front: 8,
+  9-front: 9,
+  10-front: 10,
+  11-front: 11,
+  12-front: 12,
+  1-back: -1,
+  2-back: -2,
+  3-back: -3,
+  4-back: -4,
+  5-back: -5,
+  6-back: -6,
+  7-back: -7,
+  8-back: -8,
+  9-back: -9,
+  10-back: -10,
+  11-back: -11,
+  12-back: -12,
+);
+
+// ------ Other variables ------
+$-z-indices: (
+  zero: 0,
+  1-front: 10,
+  2-front: 200,
+  3-front: 3000,
+  4-front: 40000,
+  5-front: 500000,
+  1-back: -10,
+  2-back: -200,
+  3-back: -3000,
+  4-back: -40000,
+  5-back: -500000,
+);
+$-font-sizes: (
+  zero: 0,
+  xs: 9,
+  sm: 11,
+  md: 14,
+  lg: 16,
+  xl: 24,
+  xxl: 32,
+  x3l: 48,
+  x4l: 64,
+  x5l: 90,
+  x6l: 128,
+);
+$-font-heights: (
+  zero: 0,
+  xs: 11,
+  sm: 14,
+  md: 16,
+  lg: 21,
+  xl: 30,
+  xxl: 38,
+  x3l: 55,
+  x4l: 72,
+  x5l: 100,
+  x6l: 140,
+);
+$-small-sizes: (
+  zero: 0,
+  xs: 1px,
+  sm: 2px,
+  md: 3px,
+  lg: 5px,
+  xl: 7px,
+  xxl: 10px,
+  x3l: 15px,
+  x4l: 20px,
+  x5l: 25px,
+  x6l: 35px,
+);
+$-small-sizes2: (
+  auto: auto,
+  zero: 0,
+  xs: 1px,
+  sm: 2px,
+  md: 3px,
+  lg: 5px,
+  xl: 7px,
+  xxl: 10px,
+  x3l: 15px,
+  x4l: 20px,
+  x5l: 25px,
+  x6l: 35px,
+);
+$-sizes: (
+  zero: 0,
+  1px: 1,
+  2px: 2,
+  3px: 3,
+  5px: 5,
+  xs: 5,
+  7px: 7,
+  10px: 10,
+  sm: 10,
+  15px: 15,
+  20px: 20,
+  25px: 25,
+  md: 25,
+  30px: 30,
+  35px: 35,
+  40px: 40,
+  45px: 45,
+  50px: 50,
+  lg: 50,
+  60px: 60,
+  70px: 70,
+  80px: 80,
+  90px: 90,
+  100px: 100,
+  xl: 100,
+  120px: 120,
+  140px: 140,
+  160px: 160,
+  180px: 180,
+  200px: 200,
+  xxl: 200,
+  250px: 250,
+  300px: 300,
+  x3l: 300,
+  350px: 350,
+  400px: 400,
+  x4l: 400,
+  450px: 450,
+  500px: 500,
+  screen-xs: 576,
+  screen-sm: 768,
+  screen-md: 992,
+  screen-lg: 1200,
+  screen-xl: 1400,
+  screen-xxl: 1600,
+);
+$-opacity-levels: (
+  zero: 0,
+  5: 0.05,
+  10: 0.1,
+  15: 0.15,
+  25: 0.25,
+  35: 0.35,
+  50: 0.5,
+  65: 0.65,
+  75: 0.75,
+  85: 0.85,
+  90: 0.9,
+  95: 0.95,
+);
+$-rotate-degrees: (
+  zero: rotate(0deg),
+  30: rotate(30deg),
+  45: rotate(45deg),
+  60: rotate(60deg),
+  90: rotate(90deg),
+  180: rotate(180deg),
+  360: rotate(360deg),
+  ccw-30: rotate(-30deg),
+  ccw-45: rotate(-45deg),
+  ccw-60: rotate(-60deg),
+  ccw-90: rotate(-90deg),
+  ccw-180: rotate(-180deg),
+  ccw-360: rotate(-360deg),
+);
+$-anim-underline-height: 5;
+$-anim-underline-color: $-blue;
+$-anim-underline-time: 0.2;
+$-anim-spin-times: (
+  xs: "spin 0.3 infinite linear",
+  sm: "spin 0.5 infinite linear",
+  md: "spin 0.7 infinite linear",
+  lg: "spin 1.2 infinite linear",
+  xl: "spin 1.8 infinite linear",
+  xxl: "spin 2.5 infinite linear",
+  4s: "spin 4 infinite linear",
+  8s: "spin 8 infinite linear",
+  16s: "spin 16 infinite linear",
+  32s: "spin 32 infinite linear",
+);
+$-times: (
+  xs: 0.3s,
+  sm: 0.5s,
+  md: 0.7s,
+  lg: 1.2s,
+  xl: 1.8s,
+  xxl: 2.5s,
+  x3l: 4s,
+  x4l: 8s,
+  x5l: 16s,
+);
+$-times2: (
+  xs: 0.3s,
+  sm: 0.5s,
+  md: 0.7s,
+  lg: 1.2s,
+  xl: 1.8s,
+  xxl: 2.5s,
+  x3l: 4s,
+  x4l: 8s,
+  x5l: 16s,
+);
+$-shadows: (
+  xs: 0 0 1px 0 rgba(0, 0, 0, 0.2),
+  sm: 0px 0px 2px 1px rgba(0, 0, 0, 0.2),
+  md: 0px 0px 3px 2px rgba(0, 0, 0, 0.2),
+  lg: 0px 0px 4px 3px rgba(0, 0, 0, 0.2),
+  xl: 0px 0px 5px 4px rgba(0, 0, 0, 0.2),
+  xxl: 0px 0px 6px 5px rgba(0, 0, 0, 0.2),
+);
+$-shadows-rt: (
+  xs: 1px -1px 1px 0px rgba(0, 0, 0, 0.2),
+  sm: 1px -1px 2px 1px rgba(0, 0, 0, 0.2),
+  md: 1px -1px 3px 2px rgba(0, 0, 0, 0.2),
+  lg: 1px -1px 4px 3px rgba(0, 0, 0, 0.2),
+  xl: 1px -1px 5px 4px rgba(0, 0, 0, 0.2),
+  xxl: 1px -1px 6px 5px rgba(0, 0, 0, 0.2),
+);
+$-shadows-lt: (
+  xs: -1px -1px 1px 0px rgba(0, 0, 0, 0.2),
+  sm: -1px -1px 2px 1px rgba(0, 0, 0, 0.2),
+  md: -1px -1px 3px 2px rgba(0, 0, 0, 0.2),
+  lg: -1px -1px 4px 3px rgba(0, 0, 0, 0.2),
+  xl: -1px -1px 5px 4px rgba(0, 0, 0, 0.2),
+  xxl: -1px -1px 6px 5px rgba(0, 0, 0, 0.2),
+);
+$-shadows-rb: (
+  xs: 1px 1px 1px 0px rgba(0, 0, 0, 0.2),
+  sm: 1px 1px 2px 1px rgba(0, 0, 0, 0.2),
+  md: 1px 1px 3px 2px rgba(0, 0, 0, 0.2),
+  lg: 1px 1px 4px 3px rgba(0, 0, 0, 0.2),
+  xl: 1px 1px 5px 4px rgba(0, 0, 0, 0.2),
+  xxl: 1px 1px 6px 5px rgba(0, 0, 0, 0.2),
+);
+$-shadows-lb: (
+  xs: -1px 1px 1px 0px rgba(0, 0, 0, 0.2),
+  sm: -1px 1px 2px 1px rgba(0, 0, 0, 0.2),
+  md: -1px 1px 3px 2px rgba(0, 0, 0, 0.2),
+  lg: -1px 1px 4px 3px rgba(0, 0, 0, 0.2),
+  xl: -1px 1px 5px 4px rgba(0, 0, 0, 0.2),
+  xxl: -1px 1px 6px 5px rgba(0, 0, 0, 0.2),
+);
+$-text-shadows: (
+  xs: 0 1px 1px rgba(0, 0, 0, 0.2),
+  sm: 0 2px 1px rgba(0, 0, 0, 0.2),
+  md: 0 3px 2px rgba(0, 0, 0, 0.2),
+  lg: 0 4px 2px rgba(0, 0, 0, 0.2),
+  xl: 0 5px 3px rgba(0, 0, 0, 0.2),
+  xxl: 0 6px 4px rgba(0, 0, 0, 0.2),
+);
+$-scales: (
+  xs: scale(1.1),
+  sm: scale(2.2),
+  md: scale(1.3),
+  lg: scale(1.5),
+  xl: scale(1.7),
+);
+$-float-heights: (
+  xs: translateY(-2px),
+  sm: translateY(-3px),
+  md: translateY(-5px),
+  lg: translateY(-7px),
+  xl: translateY(-10px),
+);
+$-skew-degrees: (
+  xs: skew(5deg),
+  sm: skew(10deg),
+  md: skew(20deg),
+  lg: skew(35deg),
+  xl: skew(45deg),
+);
+$-skew-degrees-ccw: (
+  xs: skew(-5deg),
+  sm: skew(-10deg),
+  md: skew(-20deg),
+  lg: skew(-35deg),
+  xl: skew(-45deg),
+);
