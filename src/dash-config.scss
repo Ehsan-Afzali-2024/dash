@@ -254,14 +254,18 @@ $-rotate-degrees: (
   45deg: rotate(45deg),
   60deg: rotate(60deg),
   90deg: rotate(90deg),
+  120deg: rotate(120deg),
+  135deg: rotate(135deg),
+  150deg: rotate(150deg),
   180deg: rotate(180deg),
-  360deg: rotate(360deg),
   ccw-30deg: rotate(-30deg),
   ccw-45deg: rotate(-45deg),
   ccw-60deg: rotate(-60deg),
   ccw-90deg: rotate(-90deg),
+  ccw-120deg: rotate(-120deg),
+  ccw-135deg: rotate(-135deg),
+  ccw-150deg: rotate(-150deg),
   ccw-180deg: rotate(-180deg),
-  ccw-360deg: rotate(-360deg),
 );
 $-anim-underline-height: 5;
 $-anim-underline-color: $-blue;
