@@ -90,7 +90,7 @@ $-colors: (
 $-grid-columns-count: 12;
 $-flex-scales: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 $-orders: (
-  zero: 0,
+  0: 0,
   1-front: 1,
   2-front: 2,
   3-front: 3,
@@ -119,7 +119,7 @@ $-orders: (
 
 // ------ Other variables ------
 $-z-indices: (
-  zero: 0,
+  0: 0,
   1-front: 10,
   2-front: 200,
   3-front: 3000,
@@ -132,7 +132,7 @@ $-z-indices: (
   5-back: -500000,
 );
 $-font-sizes: (
-  zero: 0,
+  0: 0,
   1: 0.5625rem,
   // 9px
   2: 0.6875rem,
@@ -155,7 +155,7 @@ $-font-sizes: (
   // 128px
 );
 $-font-heights: (
-  zero: 0,
+  0: 0,
   1: 0.6875rem,
   // 11px
   2: 0.875rem,
@@ -178,7 +178,7 @@ $-font-heights: (
   // 140px
 );
 $-small-sizes: (
-  zero: 0,
+  0: 0,
   1: 0.0625rem,
   // 1px
   2: 0.125rem,
@@ -202,7 +202,7 @@ $-small-sizes: (
 );
 $-small-sizes2: (
   auto: auto,
-  zero: 0,
+  0: 0,
   1: 0.0625rem,
   // 1px
   2: 0.125rem,
@@ -225,7 +225,7 @@ $-small-sizes2: (
   // 35px
 );
 $-sizes: (
-  zero: 0,
+  0: 0,
   1px: 0.0625rem,
   // 1px
   1: 0.0625rem,
@@ -335,7 +335,7 @@ $-opacity-levels: (
   full: 1,
 );
 $-rotate-degrees: (
-  zero: rotate(0deg),
+  0: rotate(0deg),
   30deg: rotate(30deg),
   45deg: rotate(45deg),
   60deg: rotate(60deg),
