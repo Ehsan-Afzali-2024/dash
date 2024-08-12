@@ -6,7 +6,7 @@
 
 ## Version
 
-- **Current Version**: 1.0.0
+**Current Version**: 1.0.0
 
 ## Utility Classes
 
@@ -14,403 +14,478 @@
 
 **Description**: Removes default styles from elements, making them appear as normal text.
 
-**Usage**: `-unstyled`
+**Class**: `-unstyled`
 
-### Link Formats
+### Link
 
-- **Classes**: `-link`, `-link-hover`, `-link-focus`
+**Classes**: `-link`, `-link-hover`, `-link-focus`
 
-  .-link, .-link-hover:hover, .-link-focus:focus {
+```css
+.-link,
+.-link-hover:hover,
+.-link-focus:focus {
   text-decoration: none;
   cursor: pointer;
   color: #fc598f;
   font-weight: bold;
   display: block;
-  }
+}
+```
 
 ### Text Formatting
 
-- **Bold Text**: `-t-bold`, `-t-bold-hover`, `-t-bold-focus`
+**Bold Text**: `-t-bold`, `-t-bold-hover`, `-t-bold-focus`
 
-      .-t-bold, .-t-bold-hover:hover, .-t-bold-focus:focus {
-          font-weight: bold;
-      }
+```css
+.-t-bold,
+.-t-bold-hover:hover,
+.-t-bold-focus:focus {
+  font-weight: bold;
+}
+```
 
-- **Italic Text**: `-t-italic`, `-t-italic-hover`, `-t-italic-focus`
+**Italic Text**: `-t-italic`, `-t-italic-hover`, `-t-italic-focus`
 
-      .-t-italic, .-t-italic-hover:hover, .-t-italic-focus:focus {
-          font-style: italic;
-      }
+```css
+.-t-italic,
+.-t-italic-hover:hover,
+.-t-italic-focus:focus {
+  font-style: italic;
+}
+```
 
-- **Text Decorations**: `-t-underline`, `-t-overline`, `-t-overline-hover`, `-t-line-through-focus`, etc.
+**Text Decorations**: `-t-underline`, `-t-overline`, `-t-overline-hover`, `-t-line-through-focus`, etc.
 
-      .-t-underline, .-t-underline-hover:hover, .-t-underline-focus:focus {
-          text-decoration: underline;
-      }
+```css
+.-t-underline,
+.-t-underline-hover:hover,
+.-t-underline-focus:focus {
+  text-decoration: underline;
+}
+```
 
 ### Text Transformations
 
-- **Classes**: `-t-lowercase`, `-t-uppercase`, `-t-capitalize`
+**Classes**: `-t-lowercase`, `-t-uppercase`, `-t-capitalize`
 
-      .-t-lowercase, .-t-lowercase-hover:hover, .-t-lowercase-focus:focus {
-          text-transform: lowercase;
-      }
+```css
+.-t-lowercase,
+.-t-lowercase-hover:hover,
+.-t-lowercase-focus:focus {
+  text-transform: lowercase;
+}
+```
 
 ### Direction
 
-- **Direction Classes**: `-ltr` (Left to Right), `-rtl` (Right to Left)
+**Classes**: `-ltr` (Left to Right), `-rtl` (Right to Left)
 
-      .-ltr {
-          direction: ltr;
-      }
-      .-rtl {
-         direction: rtl;
-      }
+```css
+.-ltr {
+  direction: ltr;
+}
+.-rtl {
+  direction: rtl;
+}
+```
 
 ### Clear
 
-- **Clear Classes**: `-clear`, `-clear-right`, `-clear-left`, `-clear-none`, `-clearfix`
+**Clear Classes**: `-clear`, `-clear-right`, `-clear-left`, `-clear-none`, `-clearfix`
 
-      .-clearfix:before {
-          content: "";
-          display: table;
-      }
-      .-clearfix:after {
-          clear: both;
-          content: ".";
-          display: block;
-          font-size: 0;
-          height: 0;
-          visibility: hidden;
-      }
-      .-clearfix {
-          zoom: 1;
-          clear: both;
-          width: 100%;
-          min-height: 0.01px;
-      }
+```css
+.-clearfix:before {
+  content: "";
+  display: table;
+}
+.-clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+.-clearfix {
+  zoom: 1;
+  clear: both;
+  width: 100%;
+  min-height: 0.01px;
+}
+```
 
 ### Box Sizing
 
-- **Classes**: `-box-content`, `-box-border`
+**Classes**: `-box-content`, `-box-border`
 
-      .-box-content, .-box-content * {
-          box-sizing: content-box;
-      }
-      .-box-border, .-box-border * {
-          box-sizing: border-box;
-      }
+```css
+.-box-content,
+.-box-content * {
+  box-sizing: content-box;
+}
+.-box-border,
+.-box-border * {
+  box-sizing: border-box;
+}
+```
 
 ### Object Fit
 
-- **Classes**: `-fit-cover`, `-fit-fill`, `-fit-none`, `-fit-scale-down`
+**Classes**: `-fit-cover`, `-fit-fill`, `-fit-none`, `-fit-scale-down`
 
-      .-fit-cover {
-          object-fit: cover;
-      }
+```css
+.-fit-cover {
+  object-fit: cover;
+}
+```
 
 ### Aspect Ratios
 
-- **Classes**: `-aspect-ratio`, `-aspect-video`, `-aspect-square`, etc.
+**Classes**: `-aspect-ratio`, `-aspect-video`, `-aspect-square`, etc.
 
-      .-aspect-video {
-          aspect-ratio: 16/9;
-      }
+```css
+.-aspect-video {
+  aspect-ratio: 16/9;
+}
+```
 
 ### Positioning
 
-- **Classes**: `-pos-absolute`, `-pos-relative`, `-pos-static`, `-pos-fixed`, `-pos-sticky`
+**Classes**: `-pos-absolute`, `-pos-relative`, `-pos-static`, `-pos-fixed`, `-pos-sticky`
 
-      .-pos-absolute {
-          position: absolute;
-      }
+```css
+.-pos-absolute {
+  position: absolute;
+}
+```
 
 ### Display Properties
 
-- **Classes**: `-d-inline`, `-d-inline-block`, `-d-grid`, `-md-d-block`, `-lg-d-hidden`, etc
+**Classes**: `-d-inline`, `-d-inline-block`, `-d-grid`, `-md-d-block`, `-lg-d-hidden`, etc
 
-      .-d-inline {
-          display: inline;
-      }
+```css
+.-d-inline {
+  display: inline;
+}
+```
 
 ### Cursor Styles
 
-- **Classes**: `-cursor-default`, `-cursor-pointer`, `-cursor-auto`, etc.
+**Classes**: `-cursor-default`, `-cursor-pointer`, `-cursor-auto`, etc.
 
-      .-cursor-default {
-          cursor: default;
-      }
+```css
+.-cursor-default {
+  cursor: default;
+}
+```
 
 ### Text Formatters
 
-- **Classes**: `-t-break`, `-t-nowrap`, `-t-ellipsis`, `t-single-row`, etc.
+**Classes**: `-t-break`, `-t-nowrap`, `-t-ellipsis`, `t-single-row`, etc.
 
-      .-t-ellipsis {
-          text-overflow: ellipsis;
-      }
+```css
+.-t-ellipsis {
+  text-overflow: ellipsis;
+}
+```
 
 ### Font Families
 
-- **Classes**: `-font-sans-serif`, `-font-arial`, `-font-georgia`, etc.
+**Classes**: `-font-sans-serif`, `-font-arial`, `-font-georgia`, etc.
 
-      .-font-arial {
-          font-family: arial, helvetica, sans-serif;
-      }
+```css
+.-font-arial {
+  font-family: arial, helvetica, sans-serif;
+}
+```
 
 ### Ribbon
 
-- **Class**: `-ribbon`
+**Class**: `-ribbon`
 
-      .-ribbon {
-          overflow: hidden;
-          height: 4px;
-          font-size: 0;
-      }
+```css
+.-ribbon {
+  overflow: hidden;
+  height: 4px;
+  font-size: 0;
+}
+```
 
 ### Responsive Images
 
-- **Class**: `-img-responsive`
+**Class**: `-img-responsive`
 
-      .-img-responsive {
-          max-width: none;
-      }
+```css
+.-img-responsive {
+  max-width: none;
+}
+```
 
 ### Background Properties
 
-- **Classes**: `-bg-cover`, `-bg-fixed`
+**Classes**: `-bg-cover`, `-bg-fixed`
 
-      .-bg-cover {
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-      }
-      .-bg-fixed {
-          background-attachment: fixed;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-      }
+```css
+.-bg-cover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.-bg-fixed {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+```
 
 ### Tables
 
-- **Classes**: `-table`, `-table-striped`, `-table-bordered`
+**Classes**: `-table`, `-table-striped`, `-table-bordered`
 
-      .-table {
-          width: 100%;
-          border-spacing: 0;
-          border-collapse: collapse;
-          text-align: right;
-      }
+```css
+.-table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: right;
+}
+```
 
 ### Rounded Border
 
-- **Classes**: `-b-rounded-full`, `-b-rounded-0`, `-b-rounded-2-hover`, etc
+**Classes**: `-b-rounded-full`, `-b-rounded-0`, `-b-rounded-2-hover`, etc
 
-      .-b-rounded-full {
-          border-radius: 50%;
-      }
+```css
+.-b-rounded-full {
+  border-radius: 50%;
+}
+```
 
 ### Effects and Animations
 
-- **Rotation Effects**: `-effect-rotate-z-0`, `-effect-rotate-x-30deg`, `-effect-rotate-y-30deg`, etc.
+**Rotation Effects**: `-effect-rotate-z-0`, `-effect-rotate-x-30deg`, `-effect-rotate-y-30deg`, etc.
 
-      .-effect-rotate-z-0 {
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-      }
+```css
+.-effect-rotate-z-0 {
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+```
 
-- **Flip**: `-effect-flip-hz`, `-effect-flip-vt`, etc.
+**Flip**: `-effect-flip-hz`, `-effect-flip-vt`, etc.
 
-      .-effect-flip-hz, .-effect-flip-hz-hover:hover, .-effect-flip-hz-focus:focus {
-          transform: scale(-1, 1);
-      }
+```css
+.-effect-flip-hz,
+.-effect-flip-hz-hover:hover,
+.-effect-flip-hz-focus:focus {
+  transform: scale(-1, 1);
+}
+```
 
-      .-effect-flip-vt .-effect-flip-vt-hover:hover, .-effect-flip-vt-focus:focus {
-          transform: scale(1, -1);
-      }
+.-effect-flip-vt .-effect-flip-vt-hover:hover, .-effect-flip-vt-focus:focus {
+transform: scale(1, -1);
+}
 
-- **Filter**: `-effect-filter-gray`, `-effect-filter-blur-3`, etc.
+**Filter**: `-effect-filter-gray`, `-effect-filter-blur-3`, etc.
 
-      .-effect-filter-gray {
-          filter: grayscale(1);
-      }
+```css
+.-effect-filter-gray {
+  filter: grayscale(1);
+}
+```
 
-- **Transition**: `-effect-transition`
+**Transition**: `-effect-transition`
 
-      .-effect-transition {
-          transition-property: all;
-      }
+```css
+.-effect-transition {
+  transition-property: all;
+}
+```
 
-- **Duration**: `-effect-duration`
+**Duration**: `-effect-duration`
 
-      .-effect-duration-1 {
-          transition-duration: 0.3s;
-      }
-      .-anim-duration-2 {
-          animation-duration: 0.5s;
-      }
+````css
+.-effect-duration-1 {
+  transition-duration: 0.3s;
+}
+.-anim-duration-2 {
+  animation-duration: 0.5s;
+}
 
-- **Timing Functions**: `-effect-timing-linear`, `-anim-timing-ease`, etc
+**Timing Functions**: `-effect-timing-linear`, `-anim-timing-ease`, etc
+```css
+.-effect-timing-linear {
+  transition-timing-function: linear;
+}
+.-anim-timing-linear {
+  transition-timing-function: linear;
+}
+````
 
-      .-effect-timing-linear {
-          transition-timing-function: linear;
-      }
-      .-anim-timing-linear {
-          transition-timing-function: linear;
-      }
+**Effects**: `-effect-grow-2`, `-effect-float-3`, `-effect-underline`, etc
 
-- **Effects**: `-effect-grow-2`, `-effect-float-3`, `-effect-underline`, etc
+```css
+.-effect-float-1 {
+  transform: translateY(-0.125rem);
+}
+```
 
-      .-effect-float-1 {
-          transform: translateY(-0.125rem);
-      }
+**Animations**: `-anim-background`, `-anim-spin`, `-anim-up-down`, etc
 
-- **Animations**: `-anim-background`, `-anim-spin`, `-anim-up-down`, etc
-
-      .anim-up-down {
-          animation: -anim-up-down 2s ease-in-out infinite;
-      }
-      @keyframes -anim-up-down {
-          0% {
-              transform: translateY(0);
-          }
-          50% {
-              transform: translateY(15px);
-          }
-          100% {
-              transform: translateY(0);
-          }
-      }
+```css
+.anim-up-down {
+  animation: -anim-up-down 2s ease-in-out infinite;
+}
+@keyframes -anim-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+```
 
 ### 3D Text
 
-- **Classes**: `-t-3d-white`, `-t-3d-black`, `-t-3d-gray`
+**Classes**: `-t-3d-white`, `-t-3d-black`, `-t-3d-gray`
 
-      .-t-3d-white {
-        color: #fff;
-        text-shadow: -3px -3px 0 #222, 3px -3px 0 #222, -3px 3px 0 #222,
-          3px 3px 0 #222, 4px 4px 0 #fff, 5px 5px 0 #fff, 6px 6px 0 #fff,
-          7px 7px 0 #fff;
-        line-height: 0.8em;
-        letter-spacing: 0.1em;
-        transform: scaleY(0.7);
-      }
+```css
+.-t-3d-white {
+  color: #fff;
+  text-shadow: -3px -3px 0 #222, 3px -3px 0 #222, -3px 3px 0 #222, 3px 3px 0
+      #222, 4px 4px 0 #fff, 5px 5px 0 #fff, 6px 6px 0 #fff, 7px 7px 0 #fff;
+  line-height: 0.8em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.7);
+}
+```
 
 ### Pushy Button
 
-- **Class**: `-btn-pushy`
+**Class**: `-btn-pushy`
 
 ### Color
 
-- **Color**: `-t-green-4`, `-xl-t-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
+**Color**: `-t-green-4`, `-xl-t-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
 
-- **Background Color**: `-bg-green-4`, `-xl-bg-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
+**Background Color**: `-bg-green-4`, `-xl-bg-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
 
-- **Border Color**: `-b-green-4`, `-xl-b-red-1-hover`, `-b-blue-3-focus`, `-b-transparent`
+**Border Color**: `-b-green-4`, `-xl-b-red-1-hover`, `-b-blue-3-focus`, `-b-transparent`
 
-- **Gradient Color**: `-gr-lime-yellow`, `-gr-orange-pink-lime`, `-gr-yellow-lime`, `-gr-pink-lime-aqua`
+**Gradient Color**: `-gr-lime-yellow`, `-gr-orange-pink-lime`, `-gr-yellow-lime`, `-gr-pink-lime-aqua`
 
-- **Selection Color**: `-t-selection-aqua`, `-bg-selection-lime`
+**Selection Color**: `-t-selection-aqua`, `-bg-selection-lime`
 
 ### Smooth Scrolling
 
-- **Smooth Scrolling**: `-scroll-smooth`
+**Smooth Scrolling**: `-scroll-smooth`
 
-      scroll-smooth {
-        scroll-behavior: smooth;
-      }
+```css
+scroll-smooth {
+  scroll-behavior: smooth;
+}
+```
 
 ### Flexible Box And Grid System
 
-- **Classes**: `-container`, `-f`, `-f-item`, `f-dir-row`, `f-wrap-reverse`, `f-center`,
-  `f-content-stretch`,`f-row-gap`, `f-items-start`, `f-item-grow`, `f-item-order`
+**Classes**: `-container`, `-f`, `-f-item`, `f-dir-row`, `f-wrap-reverse`, `f-center`,
+`f-content-stretch`,`f-row-gap`, `f-items-start`, `f-item-grow`, `f-item-order`
 
 ### Alignment
 
-- **Text Alignment**: `-t-left`, `-t-right`, `-t-center`, `-t-justify`
+**Text Alignment**: `-t-left`, `-t-right`, `-t-center`, `-t-justify`
 
-- **Center Of Box**: `-center`
+**Center Of Box**: `-center`
 
-- **Vertical Alignment**: `-vertical-top`, `-vertical-middle`, `-vertical-bottom`
+**Vertical Alignment**: `-vertical-top`, `-vertical-middle`, `-vertical-bottom`
 
 ### Stretch
 
-- **Classes**: `-w-full`, `-w-screen`, `-h-full`, `-h-screen`, `-full`, `-screen`
+**Classes**: `-w-full`, `-w-screen`, `-h-full`, `-h-screen`, `-full`, `-screen`
 
-      -w-screen {
-          width: 100vw;
-      }
-      -h-full {
-          height: 100%;
-      }
+```css
+-w-screen {
+  width: 100vw;
+}
+-h-full {
+  height: 100%;
+}
+```
 
 ### Pressed
 
-- **Class**: `-pressed`
+**Class**: `-pressed`
 
 ### Z-Index
 
-- **Classes**: `-z-1-front`, `-md-z-2-back`
+**Classes**: `-z-1-front`, `-md-z-2-back`
 
 ### Scroll Bar
 
-- **Classes**: `scroll-hidden`, `scroll-x`, `scroll-y`, `scroll`
+**Classes**: `scroll-hidden`, `scroll-x`, `scroll-y`, `scroll`
 
 ### Float
 
-- **Classes**: `float-left`, `float-right`, `float-none`
+**Classes**: `float-left`, `float-right`, `float-none`
 
 ### Font Size
 
-- **Classes**: `font-1`, `font-3`
+**Classes**: `font-1`, `font-3`
 
 ### Line Height
 
-- **Classes**: `line-1`, `line-3`
+**Classes**: `line-1`, `line-3`
 
 ### Display
 
-- **Classes**: `d-hidden`, `d-block`, etc
+**Classes**: `d-hidden`, `d-block`, etc
 
 ### Opacity
 
-- **Classes**: `-opacity-transparent`, `-opacity-5`, `-opacity-15-hover`, `-opacity-35-focus`, etc
+**Classes**: `-opacity-transparent`, `-opacity-5`, `-opacity-15-hover`, `-opacity-35-focus`, etc
 
 ### Shadow
 
-- **Classes**: `-shadow-1`, `-md-shadow-2-hover`, `-shadow-rt-4-focus`,
-  `-shadow-lt-6`, `-md-shadow-rb-3`, etc
+**Classes**: `-shadow-1`, `-md-shadow-2-hover`, `-shadow-rt-4-focus`,
+`-shadow-lt-6`, `-md-shadow-rb-3`, etc
 
 ### Border
 
-- **Classes**: `-b`, `-b-none`, `-bt`, `-bb`, `-br`, `-bl`, `-bx`, `-by`,
-  `-b-1`, `-b-3`, `-b-dashed`, etc
+**Classes**: `-b`, `-b-none`, `-bt`, `-bb`, `-br`, `-bl`, `-bx`, `-by`,
+`-b-1`, `-b-3`, `-b-dashed`, etc
 
 ### Outline
 
-- **Classes**: `-outline`, `-outline-none`, `-outline-1`, `-outline-3`,
-  `-outline-offset-3`, `-outline-dashed`, etc
+**Classes**: `-outline`, `-outline-none`, `-outline-1`, `-outline-3`,
+`-outline-offset-3`, `-outline-dashed`, etc
 
 ### Height And Width
 
-- **Width**: `-md-w-hover-3`, `-w-100px-hover`, etc
+**Width**: `-md-w-hover-3`, `-w-100px-hover`, etc
 
-- **Max-Width**: `-md-mw-focus-3`, `-mw-100px-hover`, etc
+**Max-Width**: `-md-mw-focus-3`, `-mw-100px-hover`, etc
 
-- **Height**: `-md-w-hover-3`, `-w-100px-focus`, etc
+**Height**: `-md-w-hover-3`, `-w-100px-focus`, etc
 
-- **Automatic Width And Height**: `-w-auto-1`, `-h-auto-3`
+**Automatic Width And Height**: `-w-auto-1`, `-h-auto-3`
 
-      w-auto-1 {
-        width: calc(100% - 10px);
-      }
+```css
+w-auto-1 {
+  width: calc(100% - 10px);
+}
+```
 
 ### Margin And Padding
 
-- **Margin**: `-m-1`, `-mt-2`, `-mb-2`, `-mr-3`, `-ml-5`, `-mx-4`, `-my-4`, etc
+**Margin**: `-m-1`, `-mt-2`, `-mb-2`, `-mr-3`, `-ml-5`, `-mx-4`, `-my-4`, etc
 
-- **Padding**: `-p-1`, `-pt-2`, `-pb-2`, `-pr-3`, `-pl-5`, `-px-4`, `-py-4`, etc
+**Padding**: `-p-1`, `-pt-2`, `-pb-2`, `-pr-3`, `-pl-5`, `-px-4`, `-py-4`, etc
 
 ## Conclusion
 
-The Dash CSS Framework provides a comprehensive set of utility classes that facilitate rapid and efficient web design. By utilizing these classes, developers can create responsive, visually appealing layouts with minimal effort.
+**Dash** CSS Framework provides a comprehensive set of utility classes that facilitate rapid and efficient web design. By utilizing these classes, developers can create responsive, visually appealing layouts with minimal effort.
