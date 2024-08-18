@@ -396,6 +396,24 @@ scroll-smooth {
 **Classes**: `-container`, `-f`, `-f-item`, `f-dir-row`, `f-wrap-reverse`, `f-center`,
 `f-content-stretch`,`f-row-gap`, `f-items-start`, `f-item-grow`, `f-item-order`
 
+**Example**:
+
+```html
+<div class="-container">
+  <div class="-f">
+    <div class="-f-item -f-span-auto -pr-3 -h-4 -bg-red-1">...</div>
+    <div class="-f-item -f-span-auto -px-3 -h-4 -bg-blue-2">...</div>
+    <div class="-f-item -f-span-auto -px-3 -h-4 -bg-green-3">...</div>
+    <div class="-f-item -f-span-auto -pl-3 -h-4 -bg-yellow-4">...</div>
+  </div>
+  <div class="-f">
+    <div class="-f-item -span-4 -xl-span-5 -px-5 -h-4 -w-3 -bg-red-2">...</div>
+    <div class="-f-item -span-4 -xl-span-3 -px-5 -h-4 -w-3 -bg-blue-3">...</div>
+    <div class="-f-item -span-4 -px-5 -h-4 -w-3 -bg-green-5">...</div>
+  </div>
+</div>
+```
+
 ### Alignment
 
 **Text Alignment**: `-t-left`, `-t-right`, `-t-center`, `-t-justify`
@@ -482,9 +500,9 @@ w-auto-1 {
 
 ### Margin And Padding
 
-**Margin**: `-m-1`, `-mt-2`, `-mb-2`, `-mr-3`, `-ml-5`, `-mx-4`, `-my-4`, etc
+**Margin**: `-m-1`, `-md-mt-2`, `-mb-2`, `-mr-3`, `-lg-ml-5`, `-mx-4`, `-my-4`, etc
 
-**Padding**: `-p-1`, `-pt-2`, `-pb-2`, `-pr-3`, `-pl-5`, `-px-4`, `-py-4`, etc
+**Padding**: `-p-1`, `-lx-pt-2`, `-pb-2`, `-pr-3`, `-sm-pl-5`, `-px-4`, `-py-4`, etc
 
 ## Conclusion
 
