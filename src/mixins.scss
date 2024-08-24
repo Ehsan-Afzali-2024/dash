@@ -365,14 +365,14 @@ $-colors-map: map-merge(
 /// @param {boolean} $columns
 ///   An array specifying sizes for line heights
 @mixin grid($name, $columns) {
-  .#{$name}-span-0 {
+  .#{$name}span-0 {
     display: none;
   }
-  .#{$name}-span-auto {
+  .#{$name}span-auto {
     flex-grow: 1;
   }
   @for $i from 1 to $columns + 1 {
-    .#{$name}-span-#{$i} {
+    .#{$name}span-#{$i} {
       width: #{math.div($i, $columns) * 100%};
     }
   }
