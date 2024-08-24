@@ -2,11 +2,21 @@
 
 ## Overview
 
-**Dash** is a simple, lightweight, and powerful CSS framework designed to streamline web development. This documentation provides an overview of the utility classes available in the framework, categorized by their functionality.
+**Dash** is a simple, lightweight, and highly configurable CSS framework designed to streamline web development. This documentation provides an overview of the available utility classes, organized by their functionality. Dash can be utilized as both a CSS framework and an SCSS framework.
+
+To get started, simply copy the `dist/css/index.min.css` file into your project and embark on your development journey! You can customize the configuration by editing the `src/config.scss` file. For instance, you can change the `$-prefix` variable from `-` to `_`, adjust color names, and more.
+
+To apply your changes, run the following command:
+
+```cmd
+npm start
+```
+
+Please note that this command will not alter the development file located at `dist/css/index.css`; instead, it generates a new version of `dist/css/index.min.css` based on your configurations.
 
 ## Version
 
-**Current Version**: 1.0.0
+**Current Version**: 1.0.1
 
 ## Utility Classes
 
@@ -54,7 +64,7 @@
 }
 ```
 
-**Text Decorations**: `-t-underline`, `-t-overline`, `-t-overline-hover`, `-t-line-through-focus`, etc.
+**Text Decorations**: `-t-underline`, `-t-overline`, `-t-overline-hover`, `-t-line-through-focus`, etc
 
 ```css
 .-t-underline,
@@ -141,11 +151,17 @@
 
 ### Aspect Ratios
 
-**Classes**: `-aspect-ratio`, `-aspect-video`, `-aspect-square`, etc.
+**Classes**: `-aspect-ratio`, `-aspect-video`, `-aspect-square`, `-aspect-3-2`, etc
 
 ```css
 .-aspect-video {
   aspect-ratio: 16/9;
+}
+.-aspect-square {
+  aspect-ratio: 1/1;
+}
+.-aspect-2-1 {
+  aspect-ratio: 2/1;
 }
 ```
 
@@ -171,7 +187,7 @@
 
 ### Cursor Styles
 
-**Classes**: `-cursor-default`, `-cursor-pointer`, `-cursor-auto`, etc.
+**Classes**: `-cursor-default`, `-cursor-pointer`, `-cursor-auto`, etc
 
 ```css
 .-cursor-default {
@@ -181,7 +197,7 @@
 
 ### Text Formatters
 
-**Classes**: `-t-break`, `-t-nowrap`, `-t-ellipsis`, `t-single-row`, etc.
+**Classes**: `-t-break`, `-t-nowrap`, `-t-ellipsis`, `t-single-row`, etc
 
 ```css
 .-t-ellipsis {
@@ -191,7 +207,7 @@
 
 ### Font Families
 
-**Classes**: `-font-sans-serif`, `-font-arial`, `-font-georgia`, etc.
+**Classes**: `-font-sans-serif`, `-font-arial`, `-font-georgia`, etc
 
 ```css
 .-font-arial {
@@ -248,7 +264,27 @@
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  text-align: right;
+  text-align: center;
+}
+
+.-table th {
+  border-bottom: 2px #d1d1d1 solid;
+  padding: 8px 12px;
+}
+
+.-table td {
+  border-bottom: 1px #d4d4d4 solid;
+  padding: 8px 12px;
+}
+
+.-table-striped tr:nth-child(2n + 1) {
+  background-color: #f3f3f3;
+}
+
+.-table-bordered,
+.-table-bordered td,
+.-table-bordered th {
+  border: 1px #ccc solid;
 }
 ```
 
@@ -264,7 +300,7 @@
 
 ### Effects and Animations
 
-**Rotation Effects**: `-effect-rotate-z-0`, `-effect-rotate-x-30deg`, `-effect-rotate-y-30deg`, etc.
+**Rotation Effects**: `-effect-rotate-z-0`, `-effect-rotate-x-30deg`, `-effect-rotate-y-ccw-150deg`, etc
 
 ```css
 .-effect-rotate-z-0 {
@@ -273,7 +309,7 @@
 }
 ```
 
-**Flip**: `-effect-flip-hz`, `-effect-flip-vt`, etc.
+**Flip**: `-effect-flip-hz`, `-effect-flip-vt`, etc
 
 ```css
 .-effect-flip-hz,
@@ -283,15 +319,18 @@
 }
 ```
 
-.-effect-flip-vt .-effect-flip-vt-hover:hover, .-effect-flip-vt-focus:focus {
-transform: scale(1, -1);
-}
-
-**Filter**: `-effect-filter-gray`, `-effect-filter-blur-3`, etc.
+**Filter**: `-effect-filter-gray`, `-effect-filter-blur-3`, etc
 
 ```css
 .-effect-filter-gray {
   filter: grayscale(1);
+}
+
+.-effect-filter-blur-1,
+.-effect-filter-blur-1-hover:hover,
+.-effect-filter-blur-1-focus:focus {
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
 }
 ```
 
@@ -305,15 +344,17 @@ transform: scale(1, -1);
 
 **Duration**: `-effect-duration`
 
-````css
+```css
 .-effect-duration-1 {
   transition-duration: 0.3s;
 }
 .-anim-duration-2 {
   animation-duration: 0.5s;
 }
+```
 
-**Timing Functions**: `-effect-timing-linear`, `-anim-timing-ease`, etc
+**Timing Functions**: `-effect-timing-linear`, `-anim-timing-ease`, `-effect-timing-ease-in-out`, etc
+
 ```css
 .-effect-timing-linear {
   transition-timing-function: linear;
@@ -321,9 +362,10 @@ transform: scale(1, -1);
 .-anim-timing-linear {
   transition-timing-function: linear;
 }
-````
+```
 
-**Effects**: `-effect-grow-2`, `-effect-float-3`, `-effect-underline`, etc
+**Effects**: `-effect-grow-2`, `-effect-float-3`, `-effect-skew-ccw-1`, `-effect-underline`,
+`-effect-dim`, `-effect-glow`, etc
 
 ```css
 .-effect-float-1 {
@@ -331,7 +373,8 @@ transform: scale(1, -1);
 }
 ```
 
-**Animations**: `-anim-background`, `-anim-spin`, `-anim-up-down`, etc
+**Animations**: `-anim-background`, `-anim-spin-ccw-7`, `-anim-up-down`, `-anim-left-right`,
+`-anim-move-tlbr`, `-anim-move-trbl`, etc
 
 ```css
 .anim-up-down {
@@ -371,6 +414,12 @@ transform: scale(1, -1);
 
 ### Color
 
+**Description**
+The `-t` prefix means `text color`.
+Values:
+`blue`, `aqua`, `cyan`, `teal`, `green`, `lime`, `olive`, `yellow`, `orange`, `brown`,
+`red`, `pink`, `fuchsia`, `purple`, `maroon`, `black`, `gray`, `white`
+
 **Color**: `-t-green-4`, `-xl-t-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
 
 **Background Color**: `-bg-green-4`, `-xl-bg-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
@@ -386,7 +435,7 @@ transform: scale(1, -1);
 **Smooth Scrolling**: `-scroll-smooth`
 
 ```css
-scroll-smooth {
+.-scroll-smooth {
   scroll-behavior: smooth;
 }
 ```
@@ -401,10 +450,10 @@ scroll-smooth {
 ```html
 <div class="-container">
   <div class="-f">
-    <div class="-f-item -f-span-auto -pr-3 -h-4 -bg-red-1">...</div>
-    <div class="-f-item -f-span-auto -px-3 -h-4 -bg-blue-2">...</div>
-    <div class="-f-item -f-span-auto -px-3 -h-4 -bg-green-3">...</div>
-    <div class="-f-item -f-span-auto -pl-3 -h-4 -bg-yellow-4">...</div>
+    <div class="-f-item -span-auto -pr-3 -h-4 -bg-red-1">...</div>
+    <div class="-f-item -span-auto -px-3 -h-4 -bg-blue-2">...</div>
+    <div class="-f-item -span-auto -px-3 -h-4 -bg-green-3">...</div>
+    <div class="-f-item -span-auto -pl-3 -h-4 -bg-yellow-4">...</div>
   </div>
   <div class="-f">
     <div class="-f-item -span-4 -xl-span-5 -px-5 -h-4 -w-3 -bg-red-2">...</div>
@@ -445,23 +494,23 @@ scroll-smooth {
 
 ### Scroll Bar
 
-**Classes**: `scroll-hidden`, `scroll-x`, `scroll-y`, `scroll`
+**Classes**: `-scroll-hidden`, `-scroll-x`, `-scroll-y`, `-scroll`
 
 ### Float
 
-**Classes**: `float-left`, `float-right`, `float-none`
+**Classes**: `-float-left`, `-float-right`, `-float-none`
 
 ### Font Size
 
-**Classes**: `font-1`, `font-3`
+**Classes**: `-font-1`, `-font-3`
 
 ### Line Height
 
-**Classes**: `line-1`, `line-3`
+**Classes**: `-line-1`, `-line-3`
 
 ### Display
 
-**Classes**: `d-hidden`, `d-block`, etc
+**Classes**: `-d-hidden`, `-d-block`, `-d-blank`,, `-d-flex`, `-d-grid`, etc
 
 ### Opacity
 
@@ -475,7 +524,7 @@ scroll-smooth {
 ### Border
 
 **Classes**: `-b`, `-b-none`, `-bt`, `-bb`, `-br`, `-bl`, `-bx`, `-by`,
-`-b-1`, `-b-3`, `-b-dashed`, etc
+`-b-1`, `-b-3`, `-b-dashed`, `-b-dotted`, `-b-solid`, etc
 
 ### Outline
 
@@ -488,7 +537,7 @@ scroll-smooth {
 
 **Max-Width**: `-md-mw-focus-3`, `-mw-100px-hover`, etc
 
-**Height**: `-md-w-hover-3`, `-w-100px-focus`, etc
+**Height**: `-md-h-hover-3`, `-h-100px-focus`, etc
 
 **Automatic Width And Height**: `-w-auto-1`, `-h-auto-3`
 
