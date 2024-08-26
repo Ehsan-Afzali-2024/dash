@@ -1,4 +1,4 @@
-# Dash CSS Framework
+# Dash.css
 
 ## Overview
 
