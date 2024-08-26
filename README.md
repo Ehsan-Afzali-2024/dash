@@ -64,7 +64,7 @@ Please note that this command will not alter the development file located at `di
 }
 ```
 
-**Text Decorations**: `-t-underline`, `-t-overline`, `-t-overline-hover`, `-t-line-through-focus`, etc
+**Text Decorations**: `-t-underline`, `-t-overline`, `-t-overline-hover`, `-t-line-through-focus`
 
 ```css
 .-t-underline,
@@ -151,9 +151,14 @@ Please note that this command will not alter the development file located at `di
 
 ### Aspect Ratios
 
-**Classes**: `-aspect-ratio`, `-aspect-video`, `-aspect-square`, `-aspect-3-2`, etc
+**Classes**: `-aspect-ratio`, `-aspect-video`, `-aspect-square`,
+`-aspect-2-1`, `-aspect-3-2`, `-aspect-4-3`, `-aspect-34-21`,
+`-aspect-1-2`, `-aspect-2-3`, `-aspect-3-4`, `-aspect-21-34`
 
 ```css
+.-aspect-ratio {
+  aspect-ratio: auto;
+}
 .-aspect-video {
   aspect-ratio: 16/9;
 }
@@ -168,26 +173,69 @@ Please note that this command will not alter the development file located at `di
 ### Positioning
 
 **Classes**: `-pos-absolute`, `-pos-relative`, `-pos-static`, `-pos-fixed`, `-pos-sticky`
+`-pos-l`, `-pos-r`, `-pos-t`, `-pos-b`, `-pos-lt`, `-pos-rt`, `-pos-lb`, `-pos-rb`,
+`-pos-0`, `-pos-center`,
+`-pos-10`, `-pos-20`, ..., `-pos-100`
 
 ```css
 .-pos-absolute {
   position: absolute;
 }
+.-pos-l {
+  object-position: left;
+}
+.-pos-rt {
+  object-position: right top;
+}
+.-pos-0 {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.-pos-center {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.-pos-10 {
+  left: 10%;
+  -webkit-transform: translate(-90%, 0);
+  transform: translate(-90%, 0);
+}
 ```
 
 ### Display Properties
 
-**Classes**: `-d-inline`, `-d-inline-block`, `-d-grid`, `-md-d-block`, `-lg-d-hidden`, etc
+**Classes**: `-d-inline`, `-d-inline-block`, `-d-list-item`, `-d-grid`,
+`-sm-d-flex`, `-md-d-blank`, `-lg-d-hidden`, `-lx-d-collapse`
 
 ```css
 .-d-inline {
   display: inline;
 }
+/* Ghost element */
+.-d-blank,
+.-d-blank-hover:hover,
+.-d-blank-focus:focus {
+  visibility: hidden;
+}
+/* Hidden element. */
+/* For Example, hides a row of a table without resizing its columns. */
+.-d-collapse,
+.-d-collapse-hover:hover,
+.-d-collapse-focus:focus {
+  visibility: collapse;
+}
 ```
 
 ### Cursor Styles
 
-**Classes**: `-cursor-default`, `-cursor-pointer`, `-cursor-auto`, etc
+**Classes**: `-cursor-default`, `-cursor-pointer`, `-cursor-auto`, `-cursor-none`,
+`-cursor-help`, `-cursor-progress`, `-cursor-wait`, `-cursor-crosshair`, `-cursor-text`,
+`-cursor-row-resize`, `-cursor-col-resize`
 
 ```css
 .-cursor-default {
@@ -197,7 +245,7 @@ Please note that this command will not alter the development file located at `di
 
 ### Text Formatters
 
-**Classes**: `-t-break`, `-t-nowrap`, `-t-ellipsis`, `t-single-row`, etc
+**Classes**: `-t-break`, `-t-nowrap`, `-t-ellipsis`, `t-single-row`
 
 ```css
 .-t-ellipsis {
@@ -207,7 +255,7 @@ Please note that this command will not alter the development file located at `di
 
 ### Font Families
 
-**Classes**: `-font-sans-serif`, `-font-arial`, `-font-georgia`, etc
+**Classes**: `-font-sans-serif`, `-font-arial`, `-font-helvetica`, `-font-verdana`, `-font-tahoma`, `-font-arial-black`, `-font-comic-sans-ms`, `-font-trebuchet-ms`, `-font-impact`,`-font-courier`, `-font-courier-new`, `-font-andale-mono`, `-font-georgia`, `-font-times`, `-font-times-new-roman`,`-font-palatino`, `-font-century-schoolbook`, `-font-bookman`, `-font-garamond`, `-font-avant-garde`
 
 ```css
 .-font-arial {
@@ -290,7 +338,8 @@ Please note that this command will not alter the development file located at `di
 
 ### Rounded Border
 
-**Classes**: `-b-rounded-full`, `-b-rounded-0`, `-b-rounded-2-hover`, etc
+**Classes**: `-b-rounded-full`, `-b-rounded-0`, `-b-rounded-2-hover`
+Default values: `1`, `2`, ..., `10`
 
 ```css
 .-b-rounded-full {
@@ -300,7 +349,8 @@ Please note that this command will not alter the development file located at `di
 
 ### Effects and Animations
 
-**Rotation Effects**: `-effect-rotate-z-0`, `-effect-rotate-x-30deg`, `-effect-rotate-y-ccw-150deg`, etc
+**Rotation Effects**: `-effect-rotate-x-0`, `-effect-rotate-y-30deg`, `-effect-rotate-z-ccw-150deg`
+Default degrees: `30`, `45`, `60`, `90`, `120`, `135`, `150`, `180`
 
 ```css
 .-effect-rotate-z-0 {
@@ -309,23 +359,28 @@ Please note that this command will not alter the development file located at `di
 }
 ```
 
-**Flip**: `-effect-flip-hz`, `-effect-flip-vt`, etc
+**Flip**: `-effect-flip-hz`, `-effect-flip-vt`
 
 ```css
-.-effect-flip-hz,
-.-effect-flip-hz-hover:hover,
-.-effect-flip-hz-focus:focus {
+/* Flip horizontal */
+.-effect-flip-hz {
+  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
+}
+/* Flip vertical */
+.-effect-flip-vt {
+  -webkit-transform: scale(1, -1);
+  transform: scale(1, -1);
 }
 ```
 
-**Filter**: `-effect-filter-gray`, `-effect-filter-blur-3`, etc
+**Filter**: `-effect-filter-gray`, `-effect-filter-none`, `-effect-filter-blur-1`
+Blur values: `1`, `2`, `3`, `4`
 
 ```css
 .-effect-filter-gray {
   filter: grayscale(1);
 }
-
 .-effect-filter-blur-1,
 .-effect-filter-blur-1-hover:hover,
 .-effect-filter-blur-1-focus:focus {
@@ -342,7 +397,8 @@ Please note that this command will not alter the development file located at `di
 }
 ```
 
-**Duration**: `-effect-duration`
+**Duration**: `-effect-duration-3`, `-anim-duration-2`
+values: `1`, `2`, ..., `10`
 
 ```css
 .-effect-duration-1 {
@@ -353,7 +409,14 @@ Please note that this command will not alter the development file located at `di
 }
 ```
 
-**Timing Functions**: `-effect-timing-linear`, `-anim-timing-ease`, `-effect-timing-ease-in-out`, etc
+**Timing Functions**: `-effect-timing-linear`, `-effect-timing-ease`, `-effect-timing-ease-in`,
+`-effect-timing-ease-out`, `-effect-timing-ease-in-out`, `-effect-timing-circle`,
+`-effect-timing-overshoots`, `-effect-timing-2-pow-10`, `-effect-timing-sine`,
+`-effect-timing-pow-2`, `-effect-timing-pow-3`, `-effect-timing-pow-4`, `-effect-timing-pow-5`,
+`-anim-timing-linear`, `-anim-timing-ease`, `-anim-timing-ease-in`,
+`-anim-timing-ease-out`, `-anim-timing-ease-in-out`, `-anim-timing-circle`,
+`-anim-timing-overshoots`, `-anim-timing-2-pow-10`, `-anim-timing-sine`,
+`-anim-timing-pow-2`, `-anim-timing-pow-3`, `-anim-timing-pow-4`, `-anim-timing-pow-5`
 
 ```css
 .-effect-timing-linear {
@@ -364,8 +427,8 @@ Please note that this command will not alter the development file located at `di
 }
 ```
 
-**Effects**: `-effect-grow-2`, `-effect-float-3`, `-effect-skew-ccw-1`, `-effect-underline`,
-`-effect-dim`, `-effect-glow`, etc
+**Simple Effects**: `-effect-grow-2`, `-effect-float-3`, `-effect-skew-ccw-1`
+values: `1`, `2`, ..., `5`
 
 ```css
 .-effect-float-1 {
@@ -373,8 +436,17 @@ Please note that this command will not alter the development file located at `di
 }
 ```
 
-**Animations**: `-anim-background`, `-anim-spin-ccw-7`, `-anim-up-down`, `-anim-left-right`,
-`-anim-move-tlbr`, `-anim-move-trbl`, etc
+**Complex Effects**: `-effect-underline`, `-effect-dim`, `-effect-glow`
+
+```css
+.-effect-float-1 {
+  transform: translateY(-0.125rem);
+}
+```
+
+**Animations**: `-anim-background`, `-anim-spin-5`, `-anim-spin-ccw-7`, `-anim-up-down`, `-anim-left-right`,
+`-anim-move-tlbr`, `-anim-move-trbl`
+Spin values: `1`, `2`, ..., `10`
 
 ```css
 .anim-up-down {
@@ -416,18 +488,15 @@ Please note that this command will not alter the development file located at `di
 
 **Description**
 The `-t` prefix means `text color`.
-Values:
+Colors:
 `blue`, `aqua`, `cyan`, `teal`, `green`, `lime`, `olive`, `yellow`, `orange`, `brown`,
-`red`, `pink`, `fuchsia`, `purple`, `maroon`, `black`, `gray`, `white`
+`red`, `pink`, `fuchsia`, `purple`, `maroon`, `black`, `gray`, `white`, `transparent`
+Brightness values: `1`, `2`, ..., `5`
 
 **Color**: `-t-green-4`, `-xl-t-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
-
 **Background Color**: `-bg-green-4`, `-xl-bg-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
-
 **Border Color**: `-b-green-4`, `-xl-b-red-1-hover`, `-b-blue-3-focus`, `-b-transparent`
-
 **Gradient Color**: `-gr-lime-yellow`, `-gr-orange-pink-lime`, `-gr-yellow-lime`, `-gr-pink-lime-aqua`
-
 **Selection Color**: `-t-selection-aqua`, `-bg-selection-lime`
 
 ### Smooth Scrolling
@@ -442,8 +511,17 @@ Values:
 
 ### Flexible Box And Grid System
 
-**Classes**: `-container`, `-f`, `-f-item`, `f-dir-row`, `f-wrap-reverse`, `f-center`,
-`f-content-stretch`,`f-row-gap`, `f-items-start`, `f-item-grow`, `f-item-order`
+**Classes**: `-container`, `-f`, `-f-item`, `f-dir-row`, `f-dir-col`,
+`f-dir-row-reverse`, `f-dir-col-reverse`, `f-wrap`, `f-wrap-reverse`,`f-row-gap-2`, `f-col-gap-6`,
+`f-start`, `f-end`, `f-center`, `f-between`, `f-around`, `f-evenly`,
+`-f-content-start`, `-f-content-end`, `-f-content-center`,
+`-f-content-stretch`, `-f-content-between`, `-f-content-around`, `-f-content-evenly`,
+`-f-items-start`, `-f-items-end`, `-f-items-center`, `-f-items-stretch`, `-f-items-baseline`,
+`-f-item-grow-5`, `-f-item-shrink-3`
+`.-f-item-order-0`, `-f-item-order-2-front`, `-f-item-order-4-back`
+
+Gap values: `1`, `2`, ..., `10`
+Order, Grow, and Shrink values: `1`, `2`, ..., `12`
 
 **Example**:
 
@@ -491,6 +569,7 @@ Values:
 ### Z-Index
 
 **Classes**: `-z-1-front`, `-md-z-2-back`
+Values: `1`, `2`, ..., `5`
 
 ### Scroll Bar
 
@@ -503,43 +582,53 @@ Values:
 ### Font Size
 
 **Classes**: `-font-1`, `-font-3`
+Values: `1`, `2`, ..., `10`
 
 ### Line Height
 
 **Classes**: `-line-1`, `-line-3`
+Values: `1`, `2`, ..., `10`
 
 ### Display
 
-**Classes**: `-d-hidden`, `-d-block`, `-d-blank`,, `-d-flex`, `-d-grid`, etc
+**Classes**: `-d-hidden`, `-d-block`, `-d-blank`, `-d-collapse`, `-d-flex`, `-d-grid`
 
 ### Opacity
 
-**Classes**: `-opacity-transparent`, `-opacity-5`, `-opacity-15-hover`, `-opacity-35-focus`, etc
+**Classes**: `-opacity-transparent`, `-opacity-5pc`, `-opacity-15pc-hover`, `-opacity-35pc-focus`
+Values: `5pc`, `10pc`, `15pc`, `25pc`, `35pc`, `50pc`, `65pc`, `75pc`, `85pc`, `90pc`, `95pc`,
+`transparent`, `full`
 
 ### Shadow
 
 **Classes**: `-shadow-1`, `-md-shadow-2-hover`, `-shadow-rt-4-focus`,
-`-shadow-lt-6`, `-md-shadow-rb-3`, etc
+`-shadow-lt-6`, `-md-shadow-rb-3`
+Values: `1`, `2`, ..., `6`
 
 ### Border
 
-**Classes**: `-b`, `-b-none`, `-bt`, `-bb`, `-br`, `-bl`, `-bx`, `-by`,
-`-b-1`, `-b-3`, `-b-dashed`, `-b-dotted`, `-b-solid`, etc
+**Classes**: `-b`, `-b-none`, `-sm-bt`, `-md-bb`, `-lg-br`, `-bl`, `-bx`, `-by`, `-b-1`, `md-b-3`,
+`-b-solid`, `-xl-b-dashed`, `-xxl-b-dotted`, `-b-double`, `-b-ridge`, `-b-groove`
+Values: `1`, `2`, ..., `6`
 
 ### Outline
 
-**Classes**: `-outline`, `-outline-none`, `-outline-1`, `-outline-3`,
-`-outline-offset-3`, `-outline-dashed`, etc
+**Classes**: `-outline`, `-sm-outline-none`, `-lg-outline-1`, `-outline-3`,
+`-outline-offset-3`, `-lx-outline-dashed`
+Values: `1`, `2`, ..., `6`
 
 ### Height And Width
 
-**Width**: `-md-w-hover-3`, `-w-100px-hover`, etc
-
-**Max-Width**: `-md-mw-focus-3`, `-mw-100px-hover`, etc
-
-**Height**: `-md-h-hover-3`, `-h-100px-focus`, etc
-
+**Width**: `-md-w-3-hover`, `-w-100px-hover`
+**Max-Width**: `-md-mw-3-focus`, `-mw-100px-hover`
+**Height**: `-md-h-3-hover`, `-h-100px-focus`
 **Automatic Width And Height**: `-w-auto-1`, `-h-auto-3`
+
+Width, max-width, and height values: `0`, `1`, `2`, ..., `10`, `1`, `2px`, `3px`, `5px`, `7px`,
+`10px`, `15px`, `20px`, `25px`, `30px`, `35px`,`40px`, `45px`, `50px`, `60px`, `70px`, `80px`,
+`90px`, `100px`, `120px`, `140px`, `160px`, `180px`,`200px`, `250px`, `300px`, `350px`, `400px`,
+`450px`, `500px`, `sm`, `md`, `lg`, `xl`, `xxl`
+Automatic width and hight values: `1`, `2`, ..., `10`
 
 ```css
 w-auto-1 {
@@ -549,9 +638,10 @@ w-auto-1 {
 
 ### Margin And Padding
 
-**Margin**: `-m-1`, `-md-mt-2`, `-mb-2`, `-mr-3`, `-lg-ml-5`, `-mx-4`, `-my-4`, etc
-
-**Padding**: `-p-1`, `-lx-pt-2`, `-pb-2`, `-pr-3`, `-sm-pl-5`, `-px-4`, `-py-4`, etc
+**Margin**: `-m-1`, `-mx-4`, `-sm-my-4`, `-mt-2`, `-mb-2`, `-lx-ml-3`, `-lg-mr-5`
+**Padding**: `-p-1`, `-px-4`, `-sm-py-4`, `-pt-2`, `-pb-2`, `-lx-pl-3`, `-lg-pr-5`
+Margin values: `auto`, `1`, `2`, ..., `10`
+Padding values: `1`, `2`, ..., `10`
 
 ## Conclusion
 
