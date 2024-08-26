@@ -2,9 +2,9 @@
 
 ## Overview
 
-**Dash** is a simple, lightweight, and highly configurable CSS framework designed to streamline web development. This documentation provides an overview of the available utility classes, organized by their functionality. Dash can be utilized as both a CSS framework and an SCSS framework.
+**Dash.css** is a simple, lightweight (31 KB gzip) , and highly configurable CSS framework designed to streamline web development. It can be utilized as both a CSS framework and an SCSS framework. This file provides an overview of the available utility classes, organized by their functionality.
 
-To get started, simply copy the `dist/css/index.min.css` file into your project and embark on your development journey! You can customize the configuration by editing the `src/config.scss` file. For instance, you can change the `$-prefix` variable from `-` to `_`, adjust color names, and more.
+To get started, simply copy the `dist/css/dash.min.css` file into your project and embark on your development journey! You can customize the configuration by editing the `src/config.scss` file. For instance, you can change the `$-prefix` variable from `-` to `_`, adjust color names, and more.
 
 To apply your changes, run the following command:
 
@@ -12,7 +12,7 @@ To apply your changes, run the following command:
 npm start
 ```
 
-Please note that this command will not alter the development file located at `dist/css/index.css`; instead, it generates a new version of `dist/css/index.min.css` based on your configurations.
+Please note that this command will not alter the development file located at `dist/css/dash.css`; instead, it generates a new version of `dist/css/dash.min.css` based on your configurations.
 
 ## Version
 
@@ -25,6 +25,26 @@ Please note that this command will not alter the development file located at `di
 **Description**: Removes default styles from elements, making them appear as normal text.
 
 **Class**: `-unstyled`
+
+```css
+.-unstyled,
+.-unstyled * {
+  text-decoration: none;
+  font-weight: normal;
+  color: black;
+  cursor: default;
+  background: transparent;
+  box-sizing: border-box;
+  box-shadow: none;
+  text-shadow: none;
+  border: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-clip: border-box;
+  scroll-behavior: smooth;
+}
+```
 
 ### Link
 
@@ -339,6 +359,7 @@ Please note that this command will not alter the development file located at `di
 ### Rounded Border
 
 **Classes**: `-b-rounded-full`, `-b-rounded-0`, `-b-rounded-2-hover`
+
 Default values: `1`, `2`, ..., `10`
 
 ```css
@@ -350,6 +371,7 @@ Default values: `1`, `2`, ..., `10`
 ### Effects and Animations
 
 **Rotation Effects**: `-effect-rotate-x-0`, `-effect-rotate-y-30deg`, `-effect-rotate-z-ccw-150deg`
+
 Default degrees: `30`, `45`, `60`, `90`, `120`, `135`, `150`, `180`
 
 ```css
@@ -375,6 +397,7 @@ Default degrees: `30`, `45`, `60`, `90`, `120`, `135`, `150`, `180`
 ```
 
 **Filter**: `-effect-filter-gray`, `-effect-filter-none`, `-effect-filter-blur-1`
+
 Blur values: `1`, `2`, `3`, `4`
 
 ```css
@@ -398,6 +421,7 @@ Blur values: `1`, `2`, `3`, `4`
 ```
 
 **Duration**: `-effect-duration-3`, `-anim-duration-2`
+
 values: `1`, `2`, ..., `10`
 
 ```css
@@ -428,6 +452,7 @@ values: `1`, `2`, ..., `10`
 ```
 
 **Simple Effects**: `-effect-grow-2`, `-effect-float-3`, `-effect-skew-ccw-1`
+
 values: `1`, `2`, ..., `5`
 
 ```css
@@ -446,6 +471,7 @@ values: `1`, `2`, ..., `5`
 
 **Animations**: `-anim-background`, `-anim-spin-5`, `-anim-spin-ccw-7`, `-anim-up-down`, `-anim-left-right`,
 `-anim-move-tlbr`, `-anim-move-trbl`
+
 Spin values: `1`, `2`, ..., `10`
 
 ```css
@@ -487,16 +513,22 @@ Spin values: `1`, `2`, ..., `10`
 ### Color
 
 **Description**
-The `-t` prefix means `text color`.
+The `-t` prefix means `text color`
+
 Colors:
 `blue`, `aqua`, `cyan`, `teal`, `green`, `lime`, `olive`, `yellow`, `orange`, `brown`,
 `red`, `pink`, `fuchsia`, `purple`, `maroon`, `black`, `gray`, `white`, `transparent`
+
 Brightness values: `1`, `2`, ..., `5`
 
 **Color**: `-t-green-4`, `-xl-t-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
+
 **Background Color**: `-bg-green-4`, `-xl-bg-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
+
 **Border Color**: `-b-green-4`, `-xl-b-red-1-hover`, `-b-blue-3-focus`, `-b-transparent`
+
 **Gradient Color**: `-gr-lime-yellow`, `-gr-orange-pink-lime`, `-gr-yellow-lime`, `-gr-pink-lime-aqua`
+
 **Selection Color**: `-t-selection-aqua`, `-bg-selection-lime`
 
 ### Smooth Scrolling
@@ -569,6 +601,7 @@ Order, Grow, and Shrink values: `1`, `2`, ..., `12`
 ### Z-Index
 
 **Classes**: `-z-1-front`, `-md-z-2-back`
+
 Values: `1`, `2`, ..., `5`
 
 ### Scroll Bar
@@ -582,11 +615,13 @@ Values: `1`, `2`, ..., `5`
 ### Font Size
 
 **Classes**: `-font-1`, `-font-3`
+
 Values: `1`, `2`, ..., `10`
 
 ### Line Height
 
 **Classes**: `-line-1`, `-line-3`
+
 Values: `1`, `2`, ..., `10`
 
 ### Display
@@ -596,6 +631,7 @@ Values: `1`, `2`, ..., `10`
 ### Opacity
 
 **Classes**: `-opacity-transparent`, `-opacity-5pc`, `-opacity-15pc-hover`, `-opacity-35pc-focus`
+
 Values: `5pc`, `10pc`, `15pc`, `25pc`, `35pc`, `50pc`, `65pc`, `75pc`, `85pc`, `90pc`, `95pc`,
 `transparent`, `full`
 
@@ -603,31 +639,38 @@ Values: `5pc`, `10pc`, `15pc`, `25pc`, `35pc`, `50pc`, `65pc`, `75pc`, `85pc`, `
 
 **Classes**: `-shadow-1`, `-md-shadow-2-hover`, `-shadow-rt-4-focus`,
 `-shadow-lt-6`, `-md-shadow-rb-3`
+
 Values: `1`, `2`, ..., `6`
 
 ### Border
 
 **Classes**: `-b`, `-b-none`, `-sm-bt`, `-md-bb`, `-lg-br`, `-bl`, `-bx`, `-by`, `-b-1`, `md-b-3`,
 `-b-solid`, `-xl-b-dashed`, `-xxl-b-dotted`, `-b-double`, `-b-ridge`, `-b-groove`
+
 Values: `1`, `2`, ..., `6`
 
 ### Outline
 
 **Classes**: `-outline`, `-sm-outline-none`, `-lg-outline-1`, `-outline-3`,
 `-outline-offset-3`, `-lx-outline-dashed`
+
 Values: `1`, `2`, ..., `6`
 
 ### Height And Width
 
 **Width**: `-md-w-3-hover`, `-w-100px-hover`
+
 **Max-Width**: `-md-mw-3-focus`, `-mw-100px-hover`
+
 **Height**: `-md-h-3-hover`, `-h-100px-focus`
+
 **Automatic Width And Height**: `-w-auto-1`, `-h-auto-3`
 
 Width, max-width, and height values: `0`, `1`, `2`, ..., `10`, `1`, `2px`, `3px`, `5px`, `7px`,
 `10px`, `15px`, `20px`, `25px`, `30px`, `35px`,`40px`, `45px`, `50px`, `60px`, `70px`, `80px`,
 `90px`, `100px`, `120px`, `140px`, `160px`, `180px`,`200px`, `250px`, `300px`, `350px`, `400px`,
 `450px`, `500px`, `sm`, `md`, `lg`, `xl`, `xxl`
+
 Automatic width and hight values: `1`, `2`, ..., `10`
 
 ```css
@@ -639,8 +682,11 @@ w-auto-1 {
 ### Margin And Padding
 
 **Margin**: `-m-1`, `-mx-4`, `-sm-my-4`, `-mt-2`, `-mb-2`, `-lx-ml-3`, `-lg-mr-5`
+
 **Padding**: `-p-1`, `-px-4`, `-sm-py-4`, `-pt-2`, `-pb-2`, `-lx-pl-3`, `-lg-pr-5`
+
 Margin values: `auto`, `1`, `2`, ..., `10`
+
 Padding values: `1`, `2`, ..., `10`
 
 ## Conclusion
