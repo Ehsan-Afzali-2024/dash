@@ -12,11 +12,11 @@ To apply your changes, run the following command:
 npm start
 ```
 
-Please note that this command will not alter the development file located at `dist/css/dash.css`; instead, it generates a new version of `dist/css/dash.min.css` based on your configurations.
+Please note that this command will not alter the development file located at `dist/css/dash.css`; instead, it generates a new version of `dist/css/dash.min.css` and `dist/css/dash.min.css.map` based on your configurations.
 
 ## Version
 
-**Current Version**: 1.0.2
+**Current Version**: 1.0.3
 
 ## Utility Classes
 
@@ -708,7 +708,7 @@ Values: `1`, `2`, ..., `6`
 
 **Automatic Width And Height**: `-w-auto-1`, `-h-auto-3`
 
-Width, max-width, and height values: `0`, `1`, `2`, ..., `10`, `1`, `2px`, `3px`, `5px`, `7px`,
+Width, max-width, and height values: `0`, `1`, `2`, ..., `10`, `1px`, `2px`, `3px`, `5px`, `7px`,
 
 `10px`, `15px`, `20px`, `25px`, `30px`, `35px`,`40px`, `45px`, `50px`, `60px`, `70px`, `80px`,
 
