@@ -16,9 +16,27 @@ Please note that this command will not alter the development file located at `di
 
 ## Version
 
-**Current Version**: 1.0.1
+**Current Version**: 1.0.2
 
 ## Utility Classes
+
+### Responsive design
+
+**Description**: Some utility classes can be prefixed with a screen size indicator.
+
+Prefixes: `-sm`, `-md`, `-lg`, `-xl`, `-xxl`
+
+Without prefix: X-Small devices (portrait phones, _Applies to all screen sizes_)
+
+`-sm`: Small devices (landscape phones, _576px and up_)
+
+`-md`: Medium devices (tablets, _768px and up_)
+
+`-lg`: Large devices (desktops, _992px and up_)
+
+`-xl`: X-Large devices (large desktops, _1200px and up_)
+
+`-xxl`: XX-Large devices (larger desktops, _1400px and up_)
 
 ### Unstyled Elements
 
@@ -108,7 +126,7 @@ Please note that this command will not alter the development file located at `di
 
 ### Direction
 
-**Classes**: `-ltr` (Left to Right), `-rtl` (Right to Left)
+**Classes**: `-ltr` (_Left to Right_), `-rtl` (_Right to Left_)
 
 ```css
 .-ltr {
@@ -172,7 +190,9 @@ Please note that this command will not alter the development file located at `di
 ### Aspect Ratios
 
 **Classes**: `-aspect-ratio`, `-aspect-video`, `-aspect-square`,
+
 `-aspect-2-1`, `-aspect-3-2`, `-aspect-4-3`, `-aspect-34-21`,
+
 `-aspect-1-2`, `-aspect-2-3`, `-aspect-3-4`, `-aspect-21-34`
 
 ```css
@@ -192,9 +212,12 @@ Please note that this command will not alter the development file located at `di
 
 ### Positioning
 
-**Classes**: `-pos-absolute`, `-pos-relative`, `-pos-static`, `-pos-fixed`, `-pos-sticky`
+**Classes**: `-pos-absolute`, `-pos-relative`, `-pos-static`, `-pos-fixed`, `-pos-sticky`,
+
 `-pos-l`, `-pos-r`, `-pos-t`, `-pos-b`, `-pos-lt`, `-pos-rt`, `-pos-lb`, `-pos-rb`,
+
 `-pos-0`, `-pos-center`,
+
 `-pos-10`, `-pos-20`, ..., `-pos-100`
 
 ```css
@@ -230,6 +253,7 @@ Please note that this command will not alter the development file located at `di
 ### Display Properties
 
 **Classes**: `-d-inline`, `-d-inline-block`, `-d-list-item`, `-d-grid`,
+
 `-sm-d-flex`, `-md-d-blank`, `-lg-d-hidden`, `-lx-d-collapse`
 
 ```css
@@ -254,7 +278,9 @@ Please note that this command will not alter the development file located at `di
 ### Cursor Styles
 
 **Classes**: `-cursor-default`, `-cursor-pointer`, `-cursor-auto`, `-cursor-none`,
+
 `-cursor-help`, `-cursor-progress`, `-cursor-wait`, `-cursor-crosshair`, `-cursor-text`,
+
 `-cursor-row-resize`, `-cursor-col-resize`
 
 ```css
@@ -275,7 +301,13 @@ Please note that this command will not alter the development file located at `di
 
 ### Font Families
 
-**Classes**: `-font-sans-serif`, `-font-arial`, `-font-helvetica`, `-font-verdana`, `-font-tahoma`, `-font-arial-black`, `-font-comic-sans-ms`, `-font-trebuchet-ms`, `-font-impact`,`-font-courier`, `-font-courier-new`, `-font-andale-mono`, `-font-georgia`, `-font-times`, `-font-times-new-roman`,`-font-palatino`, `-font-century-schoolbook`, `-font-bookman`, `-font-garamond`, `-font-avant-garde`
+**Classes**: `-font-sans-serif`, `-font-arial`, `-font-helvetica`, `-font-verdana`, `-font-tahoma`,
+
+`-font-arial-black`, `-font-comic-sans-ms`, `-font-trebuchet-ms`, `-font-impact`,`-font-courier`,
+
+`-font-courier-new`, `-font-andale-mono`, `-font-georgia`, `-font-times`, `-font-times-new-roman`,
+
+`-font-palatino`, `-font-century-schoolbook`, `-font-bookman`, `-font-garamond`, `-font-avant-garde`
 
 ```css
 .-font-arial {
@@ -334,21 +366,17 @@ Please note that this command will not alter the development file located at `di
   border-collapse: collapse;
   text-align: center;
 }
-
 .-table th {
   border-bottom: 2px #d1d1d1 solid;
   padding: 8px 12px;
 }
-
 .-table td {
   border-bottom: 1px #d4d4d4 solid;
   padding: 8px 12px;
 }
-
 .-table-striped tr:nth-child(2n + 1) {
   background-color: #f3f3f3;
 }
-
 .-table-bordered,
 .-table-bordered td,
 .-table-bordered th {
@@ -434,12 +462,19 @@ values: `1`, `2`, ..., `10`
 ```
 
 **Timing Functions**: `-effect-timing-linear`, `-effect-timing-ease`, `-effect-timing-ease-in`,
+
 `-effect-timing-ease-out`, `-effect-timing-ease-in-out`, `-effect-timing-circle`,
+
 `-effect-timing-overshoots`, `-effect-timing-2-pow-10`, `-effect-timing-sine`,
+
 `-effect-timing-pow-2`, `-effect-timing-pow-3`, `-effect-timing-pow-4`, `-effect-timing-pow-5`,
+
 `-anim-timing-linear`, `-anim-timing-ease`, `-anim-timing-ease-in`,
+
 `-anim-timing-ease-out`, `-anim-timing-ease-in-out`, `-anim-timing-circle`,
+
 `-anim-timing-overshoots`, `-anim-timing-2-pow-10`, `-anim-timing-sine`,
+
 `-anim-timing-pow-2`, `-anim-timing-pow-3`, `-anim-timing-pow-4`, `-anim-timing-pow-5`
 
 ```css
@@ -469,8 +504,9 @@ values: `1`, `2`, ..., `5`
 }
 ```
 
-**Animations**: `-anim-background`, `-anim-spin-5`, `-anim-spin-ccw-7`, `-anim-up-down`, `-anim-left-right`,
-`-anim-move-tlbr`, `-anim-move-trbl`
+**Animations**: `-anim-background`, `-anim-spin-5`, `-anim-spin-ccw-7`,
+
+`-anim-up-down`, `-anim-left-right`, `-anim-move-tlbr`, `-anim-move-trbl`
 
 Spin values: `1`, `2`, ..., `10`
 
@@ -512,24 +548,21 @@ Spin values: `1`, `2`, ..., `10`
 
 ### Color
 
-**Description**
-The `-t` prefix means `text color`
+**Color**: `-t-green-4`, `-lg-t-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
 
-Colors:
-`blue`, `aqua`, `cyan`, `teal`, `green`, `lime`, `olive`, `yellow`, `orange`, `brown`,
-`red`, `pink`, `fuchsia`, `purple`, `maroon`, `black`, `gray`, `white`, `transparent`
+**Background Color**: `-bg-green-4`, `-xxl-bg-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
 
-Brightness values: `1`, `2`, ..., `5`
-
-**Color**: `-t-green-4`, `-xl-t-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
-
-**Background Color**: `-bg-green-4`, `-xl-bg-red-1-hover`, `-t-blue-3-focus`, `-t-transparent`
-
-**Border Color**: `-b-green-4`, `-xl-b-red-1-hover`, `-b-blue-3-focus`, `-b-transparent`
+**Border Color**: `-b-green-4`, `-sm-b-red-1-hover`, `-b-blue-3-focus`, `-b-transparent`
 
 **Gradient Color**: `-gr-lime-yellow`, `-gr-orange-pink-lime`, `-gr-yellow-lime`, `-gr-pink-lime-aqua`
 
 **Selection Color**: `-t-selection-aqua`, `-bg-selection-lime`
+
+Colors: `blue`, `aqua`, `cyan`, `teal`, `green`, `lime`, `olive`, `yellow`, `orange`, `brown`,
+
+`red`, `pink`, `fuchsia`, `purple`, `maroon`, `black`, `gray`, `white`, `transparent`
+
+Brightness values: `1`, `2`, ..., `5`
 
 ### Smooth Scrolling
 
@@ -544,15 +577,23 @@ Brightness values: `1`, `2`, ..., `5`
 ### Flexible Box And Grid System
 
 **Classes**: `-container`, `-f`, `-f-item`, `f-dir-row`, `f-dir-col`,
+
 `f-dir-row-reverse`, `f-dir-col-reverse`, `f-wrap`, `f-wrap-reverse`,`f-row-gap-2`, `f-col-gap-6`,
+
 `f-start`, `f-end`, `f-center`, `f-between`, `f-around`, `f-evenly`,
+
 `-f-content-start`, `-f-content-end`, `-f-content-center`,
+
 `-f-content-stretch`, `-f-content-between`, `-f-content-around`, `-f-content-evenly`,
+
 `-f-items-start`, `-f-items-end`, `-f-items-center`, `-f-items-stretch`, `-f-items-baseline`,
-`-f-item-grow-5`, `-f-item-shrink-3`
+
+`-f-item-grow-5`, `-f-item-shrink-3`,
+
 `.-f-item-order-0`, `-f-item-order-2-front`, `-f-item-order-4-back`
 
 Gap values: `1`, `2`, ..., `10`
+
 Order, Grow, and Shrink values: `1`, `2`, ..., `12`
 
 **Example**:
@@ -633,18 +674,19 @@ Values: `1`, `2`, ..., `10`
 **Classes**: `-opacity-transparent`, `-opacity-5pc`, `-opacity-15pc-hover`, `-opacity-35pc-focus`
 
 Values: `5pc`, `10pc`, `15pc`, `25pc`, `35pc`, `50pc`, `65pc`, `75pc`, `85pc`, `90pc`, `95pc`,
+
 `transparent`, `full`
 
 ### Shadow
 
-**Classes**: `-shadow-1`, `-md-shadow-2-hover`, `-shadow-rt-4-focus`,
-`-shadow-lt-6`, `-md-shadow-rb-3`
+**Classes**: `-shadow-1`, `-md-shadow-2-hover`, `-shadow-rt-4-focus`, `-shadow-lt-6`, `-md-shadow-rb-3`
 
 Values: `1`, `2`, ..., `6`
 
 ### Border
 
-**Classes**: `-b`, `-b-none`, `-sm-bt`, `-md-bb`, `-lg-br`, `-bl`, `-bx`, `-by`, `-b-1`, `md-b-3`,
+**Classes**: `-b`, `-b-none`, `-sm-bt`, `-md-bb`, `-lg-br`, `-bl`, `-bx`, `-by`, `-b-1`, `-md-b-3`,
+
 `-b-solid`, `-xl-b-dashed`, `-xxl-b-dotted`, `-b-double`, `-b-ridge`, `-b-groove`
 
 Values: `1`, `2`, ..., `6`
@@ -667,8 +709,11 @@ Values: `1`, `2`, ..., `6`
 **Automatic Width And Height**: `-w-auto-1`, `-h-auto-3`
 
 Width, max-width, and height values: `0`, `1`, `2`, ..., `10`, `1`, `2px`, `3px`, `5px`, `7px`,
+
 `10px`, `15px`, `20px`, `25px`, `30px`, `35px`,`40px`, `45px`, `50px`, `60px`, `70px`, `80px`,
+
 `90px`, `100px`, `120px`, `140px`, `160px`, `180px`,`200px`, `250px`, `300px`, `350px`, `400px`,
+
 `450px`, `500px`, `sm`, `md`, `lg`, `xl`, `xxl`
 
 Automatic width and hight values: `1`, `2`, ..., `10`
@@ -691,4 +736,4 @@ Padding values: `1`, `2`, ..., `10`
 
 ## Conclusion
 
-**Dash** CSS Framework provides a comprehensive set of utility classes that facilitate rapid and efficient web design. By utilizing these classes, developers can create responsive, visually appealing layouts with minimal effort.
+**Dash.css** provides a comprehensive set of utility classes that facilitate rapid and efficient web design. By utilizing these classes, developers can create responsive, visually appealing layouts with minimal effort.
