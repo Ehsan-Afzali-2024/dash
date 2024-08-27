@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Dash.css** is a simple, lightweight (31 KB gzip) , and highly configurable CSS framework designed to streamline web development. It can be utilized as both a CSS framework and an SCSS framework. This file provides an overview of the available utility classes, organized by their functionality.
+**Dash.css** is a simple, lightweight (31 KB gzipped), and highly configurable CSS framework designed to streamline web development. It can be utilized as both a CSS framework and an SCSS framework. This file provides an overview of the available utility classes, organized by their functionality.
 
 To get started, simply copy the `dist/css/dash.min.css` file into your project and embark on your development journey! You can customize the configuration by editing the `src/config.scss` file. For instance, you can change the `$-prefix` variable from `-` to `_`, adjust color names, and more.
 
