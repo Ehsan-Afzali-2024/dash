@@ -8,7 +8,7 @@ To get started, simply copy the `dist/css/dash.min.css` file into your project a
 
 To apply your changes, run the following command:
 
-```cmd
+```bash
 npm start
 ```
 
@@ -627,10 +627,10 @@ Order, Grow, and Shrink values: `1`, `2`, ..., `12`
 **Classes**: `-w-full`, `-w-screen`, `-h-full`, `-h-screen`, `-full`, `-screen`
 
 ```css
--w-screen {
+.-w-screen {
   width: 100vw;
 }
--h-full {
+.-h-full {
   height: 100%;
 }
 ```
@@ -719,7 +719,7 @@ Width, max-width, and height values: `0`, `1`, `2`, ..., `10`, `1px`, `2px`, `3p
 Automatic width and hight values: `1`, `2`, ..., `10`
 
 ```css
-w-auto-1 {
+.-w-auto-1 {
   width: calc(100% - 10px);
 }
 ```
