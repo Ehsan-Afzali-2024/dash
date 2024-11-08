@@ -4,7 +4,9 @@
 
 **Dash.css** is a simple, lightweight (31 KB gzipped), and highly configurable CSS framework designed to streamline web development. It can be utilized as both a CSS framework and an SCSS framework. This file provides an overview of the available utility classes, organized by their functionality.
 
-To get started, simply copy the `dist/css/dash.min.css` file into your project and embark on your development journey! You can customize the configuration by editing the `src/config.scss` file. For instance, you can change the `$-prefix` variable from `-` to `_`, adjust color names, and more.
+## Using Dash.css as a CSS Framework
+
+To get started, simply copy the `dist/css/dash.min.css` file into your project and begin your development journey! You can customize the framework by editing the `src/config.scss` file. For example, you can modify the `$-prefix` variable from `-` to `_`, change color names, and more.
 
 To apply your changes, run the following command:
 
@@ -12,11 +14,535 @@ To apply your changes, run the following command:
 npm start
 ```
 
-Please note that this command will not alter the development file located at `dist/css/dash.css`; instead, it generates a new version of `dist/css/dash.min.css` and `dist/css/dash.min.css.map` based on your configurations.
+Please note that this command will not modify the development file located at `dist/css/dash.css`; instead, it will generate a new version of `dist/css/dash.min.css` and `dist/css/dash.min.css.map` based on your custom configurations.
+
+## Using Dash.css as an SCSS Framework
+
+To customize the default values, start by creating a configuration file. Copy the `config.scss` file from the repository into your project, modify the variable values as needed, and ensure remove the `!default` flag from the end of their definitions. After that, import both your modified `config.scss` and the `index.scss` from the repository into your main SCSS file.
+
+Here is the structure for the initial config.scss file:
+
+```scss
+@use "sass:map";
+
+//   Dash
+//   A simple, lite-weight and powerful CSS framework
+//   version: 0.5.0
+
+// ------ Prefix ------
+$-prefix: "-" !default;
+
+// ------ Color variables ------
+$-blue: #1681df !default;
+$-aqua: #50cdff !default;
+$-cyan: #28e9e9 !default;
+$-teal: #18af98 !default;
+$-green: #2abb3b !default;
+$-lime: #44df07 !default;
+$-olive: #b5d115 !default;
+$-yellow: #ffe851 !default;
+$-orange: #fd9c46 !default;
+$-brown: #da421d !default;
+$-red: #ff4d4d !default;
+$-pink: #fc598f !default;
+$-fuchsia: #e61db7 !default;
+$-purple: #b10dc9 !default;
+$-maroon: #85144b !default;
+$-black: #222 !default;
+$-gray: #888 !default;
+$-white: #ddd !default;
+
+// ------ Brightness factors ------
+$-brightness-factor-1: 10 !default;
+$-brightness-factor-2: 20 !default;
+
+// ------ Gradient colors ------
+$-gradient-colors: (
+  "aqua": $-aqua,
+  "lime": $-lime,
+  "yellow": $-yellow,
+  "orange": $-orange,
+  "pink": $-pink,
+) !default;
+
+// ------ Colors ------
+// The `$-colors-map` variable will fill based on `$-colors` variable.
+$-colors: (
+  "blue": $-blue,
+  "aqua": $-aqua,
+  "cyan": $-cyan,
+  "teal": $-teal,
+  "green": $-green,
+  "lime": $-lime,
+  "olive": $-olive,
+  "yellow": $-yellow,
+  "orange": $-orange,
+  "brown": $-brown,
+  "red": $-red,
+  "pink": $-pink,
+  "fuchsia": $-fuchsia,
+  "purple": $-purple,
+  "maroon": $-maroon,
+  "black": $-black,
+  "gray": $-gray,
+  "white": $-white,
+) !default;
+
+// Color Naming Example
+//
+// $-colors: (
+//   "default": $-white,
+//   "primary": $-blue,
+//   "secondary": $-pink,
+//   "secondary2": $-fuchsia,
+//   "secondary3": $-purple,
+//   "accent": $-olive,
+//   "accent2": $-teal,
+//   "success": $-green,
+//   "success2": $-lime,
+//   "info": $-aqua,
+//   "info2": $-cyan,
+//   "warning": $-orange,
+//   "warning2": $-yellow,
+//   "error": $-red,
+//   "error2": $-brown,
+//   "error3": $-maroon,
+//   "neutral": $-gray,
+//   "neutral2": $-black,
+// ) !default;
+
+// ------ Flexbox variables -----
+$-grid-columns-count: 12 !default;
+$-flex-scales: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12) !default;
+$-orders: (
+  0: 0,
+  1-front: 1,
+  2-front: 2,
+  3-front: 3,
+  4-front: 4,
+  5-front: 5,
+  6-front: 6,
+  7-front: 7,
+  8-front: 8,
+  9-front: 9,
+  10-front: 10,
+  11-front: 11,
+  12-front: 12,
+  1-back: -1,
+  2-back: -2,
+  3-back: -3,
+  4-back: -4,
+  5-back: -5,
+  6-back: -6,
+  7-back: -7,
+  8-back: -8,
+  9-back: -9,
+  10-back: -10,
+  11-back: -11,
+  12-back: -12,
+) !default;
+
+// ------ Other variables ------
+$-z-indices: (
+  0: 0,
+  1-front: 10,
+  2-front: 200,
+  3-front: 3000,
+  4-front: 40000,
+  5-front: 500000,
+  1-back: -10,
+  2-back: -200,
+  3-back: -3000,
+  4-back: -40000,
+  5-back: -500000,
+) !default;
+$-font-sizes: (
+  0: 0,
+  1: 0.5625rem,
+  // 9px
+  2: 0.6875rem,
+  // 11px
+  3: 0.875rem,
+  // 14px
+  4: 1rem,
+  // 16px
+  5: 1.5rem,
+  // 24px
+  6: 2rem,
+  // 32px
+  7: 3rem,
+  // 48px
+  8: 4rem,
+  // 64px
+  9: 5.625rem,
+  // 90px
+  10: 8rem,
+  // 128px
+) !default;
+$-font-heights: (
+  0: 0,
+  1: 0.6875rem,
+  // 11px
+  2: 0.875rem,
+  // 14px
+  3: 1rem,
+  // 16px
+  4: 1.3125rem,
+  // 21px
+  5: 1.875rem,
+  // 30px
+  6: 2.375rem,
+  // 38px
+  7: 3.4375rem,
+  // 55px
+  8: 4.5rem,
+  // 72px
+  9: 6.25rem,
+  // 100px
+  10: 8.75rem,
+  // 140px
+) !default;
+$-small-sizes: (
+  0: 0,
+  1: 0.0625rem,
+  // 1px
+  2: 0.125rem,
+  // 2px
+  3: 0.1875rem,
+  // 3px
+  4: 0.3125rem,
+  // 5px
+  5: 0.4375rem,
+  // 7px
+  6: 0.625rem,
+  // 10px
+  7: 0.9375rem,
+  // 15px
+  8: 1.25rem,
+  // 20px
+  9: 1.5625rem,
+  // 25px
+  10: 2.1875rem,
+  // 35px
+) !default;
+$-small-sizes2: (
+  auto: auto,
+  0: 0,
+  1: 0.0625rem,
+  // 1px
+  2: 0.125rem,
+  // 2px
+  3: 0.1875rem,
+  // 3px
+  4: 0.3125rem,
+  // 5px
+  5: 0.4375rem,
+  // 7px
+  6: 0.625rem,
+  // 10px
+  7: 0.9375rem,
+  // 15px
+  8: 1.25rem,
+  // 20px
+  9: 1.5625rem,
+  // 25px
+  10: 2.1875rem,
+  // 35px
+) !default;
+$-sizes: (
+  0: 0,
+  1px: 0.0625rem,
+  // 1px
+  1: 0.0625rem,
+  // 1px
+  2px: 0.125rem,
+  // 2px
+  3px: 0.1875rem,
+  // 3px
+  2: 0.1875rem,
+  // 3px
+  5px: 0.3125rem,
+  // 5px
+  3: 0.1875rem,
+  // 5px
+  7px: 0.4375rem,
+  // 7px
+  10px: 0.625rem,
+  // 10px
+  4: 0.625rem,
+  // 10px
+  15px: 0.9375rem,
+  // 15px
+  20px: 1.25rem,
+  // 20px
+  25px: 1.5625rem,
+  // 25px
+  5: 1.5625rem,
+  // 25px
+  30px: 1.875rem,
+  // 30px
+  35px: 2.1875rem,
+  // 35px
+  40px: 2.5rem,
+  // 40px
+  45px: 2.8125rem,
+  // 45px
+  50px: 3.125rem,
+  // 50px
+  6: 3.125rem,
+  // 50px
+  60px: 3.75rem,
+  // 60px
+  70px: 4.375rem,
+  // 70px
+  80px: 5rem,
+  // 80px
+  90px: 5.625rem,
+  // 90px
+  100px: 6.25rem,
+  // 100px
+  7: 6.25rem,
+  // 100px
+  120px: 7.5rem,
+  // 120px
+  140px: 8.75rem,
+  // 140px
+  160px: 10rem,
+  // 160px
+  180px: 11.25rem,
+  // 180px
+  200px: 12.5rem,
+  // 200px
+  8: 12.5rem,
+  // 200px
+  250px: 15.625rem,
+  // 250px
+  300px: 18.75rem,
+  // 300px
+  9: 18.75rem,
+  // 300px
+  350px: 21.875rem,
+  // 350px
+  400px: 25rem,
+  // 400px
+  10: 25rem,
+  // 400px
+  450px: 28.125rem,
+  // 450px
+  500px: 31.25rem,
+  // 500px
+  xs: 36rem,
+  // 576px
+  sm: 48rem,
+  // 768px
+  md: 62rem,
+  // 992px
+  lg: 75rem,
+  // 1200px
+  xl: 87.5rem,
+  // 1400px
+  xxl: 100rem,
+  // 1600px
+) !default;
+$-opacity-levels: (
+  transparent: 0,
+  5pc: 0.05,
+  10pc: 0.1,
+  15pc: 0.15,
+  25pc: 0.25,
+  35pc: 0.35,
+  50pc: 0.5,
+  65pc: 0.65,
+  75pc: 0.75,
+  85pc: 0.85,
+  90pc: 0.9,
+  95pc: 0.95,
+  full: 1,
+) !default;
+$-rotate-degrees: (
+  0: rotate(0deg),
+  30deg: rotate(30deg),
+  45deg: rotate(45deg),
+  60deg: rotate(60deg),
+  90deg: rotate(90deg),
+  120deg: rotate(120deg),
+  135deg: rotate(135deg),
+  150deg: rotate(150deg),
+  180deg: rotate(180deg),
+  ccw-30deg: rotate(-30deg),
+  ccw-45deg: rotate(-45deg),
+  ccw-60deg: rotate(-60deg),
+  ccw-90deg: rotate(-90deg),
+  ccw-120deg: rotate(-120deg),
+  ccw-135deg: rotate(-135deg),
+  ccw-150deg: rotate(-150deg),
+  ccw-180deg: rotate(-180deg),
+) !default;
+$-anim-underline-height: 5 !default;
+$-anim-underline-color: $-blue !default;
+$-anim-underline-time: 0.2 !default;
+$-anim-spin-times: (
+  1: "spin 0.3 infinite linear",
+  2: "spin 0.5 infinite linear",
+  3: "spin 0.7 infinite linear",
+  4: "spin 1.2 infinite linear",
+  5: "spin 1.8 infinite linear",
+  6: "spin 2.5 infinite linear",
+  7: "spin 4 infinite linear",
+  8: "spin 8 infinite linear",
+  9: "spin 16 infinite linear",
+  10: "spin 32 infinite linear",
+) !default;
+$-times: (
+  1: 0.3s,
+  2: 0.5s,
+  3: 0.7s,
+  4: 1.2s,
+  5: 1.8s,
+  6: 2.5s,
+  7: 4s,
+  8: 8s,
+  9: 16s,
+  10: 32s,
+) !default;
+$-times2: (
+  1: 0.3s,
+  2: 0.5s,
+  3: 0.7s,
+  4: 1.2s,
+  5: 1.8s,
+  6: 2.5s,
+  7: 4s,
+  8: 8s,
+  9: 16s,
+  10: 32s,
+) !default;
+$-shadows: (
+  1: 0 0 0.0625rem 0 rgba(0, 0, 0, 0.2),
+  // 0 0 1px 0
+  2: 0px 0px 0.125rem 0.0625rem rgba(0, 0, 0, 0.2),
+  // 0 0 2px 1px
+  3: 0px 0px 0.1875rem 0.125rem rgba(0, 0, 0, 0.2),
+  // 0 0 3px 2px
+  4: 0px 0px 0.25rem 0.1875rem rgba(0, 0, 0, 0.2),
+  // 0 0 4px 3px
+  5: 0px 0px 0.3125rem 0.25rem rgba(0, 0, 0, 0.2),
+  // 0 0 5px 4px
+  6: 0px 0px 0.375rem 0.3125rem rgba(0, 0, 0, 0.2),
+  // 0 0 6px 5px
+) !default;
+
+$-shadows-rt: (
+  1: 0.0625rem -0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.2),
+  // 1px -1px 1px 0
+  2: 0.0625rem -0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.2),
+  // 1px -1px 2px 1px
+  3: 0.0625rem -0.0625rem 0.1875rem 0.125rem rgba(0, 0, 0, 0.2),
+  // 1px -1px 3px 2px
+  4: 0.0625rem -0.0625rem 0.25rem 0.1875rem rgba(0, 0, 0, 0.2),
+  // 1px -1px 4px 3px
+  5: 0.0625rem -0.0625rem 0.3125rem 0.25rem rgba(0, 0, 0, 0.2),
+  // 1px -1px 5px 4px
+  6: 0.0625rem -0.0625rem 0.375rem 0.3125rem rgba(0, 0, 0, 0.2),
+  // 1px -1px 6px 5px
+) !default;
+
+$-shadows-lt: (
+  1: -0.0625rem -0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.2),
+  // -1px -1px 1px 0
+  2: -0.0625rem -0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.2),
+  // -1px -1px 2px 1px
+  3: -0.0625rem -0.0625rem 0.1875rem 0.125rem rgba(0, 0, 0, 0.2),
+  // -1px -1px 3px 2px
+  4: -0.0625rem -0.0625rem 0.25rem 0.1875rem rgba(0, 0, 0, 0.2),
+  // -1px -1px 4px 3px
+  5: -0.0625rem -0.0625rem 0.3125rem 0.25rem rgba(0, 0, 0, 0.2),
+  // -1px -1px 5px 4px
+  6: -0.0625rem -0.0625rem 0.375rem 0.3125rem rgba(0, 0, 0, 0.2),
+  // -1px -1px 6px 5px
+) !default;
+
+$-shadows-rb: (
+  1: 0.0625rem 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.2),
+  // 1px 1px 1px 0
+  2: 0.0625rem 0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 2px 1px
+  3: 0.0625rem 0.0625rem 0.1875rem 0.125rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 3px 2px
+  4: 0.0625rem 0.0625rem 0.25rem 0.1875rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 4px 3px
+  5: 0.0625rem 0.0625rem 0.3125rem 0.25rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 5px 4px
+  6: 0.0625rem 0.0625rem 0.375rem 0.3125rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 6px 5px
+) !default;
+
+$-shadows-lb: (
+  1: -0.0625rem 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.2),
+  // 1px 1px 1px 0
+  2: -0.0625rem 0.0625rem 0.125rem 0.0625rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 2px 1px
+  3: -0.0625rem 0.0625rem 0.1875rem 0.125rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 3px 2px
+  4: -0.0625rem 0.0625rem 0.25rem 0.1875rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 4px 3px
+  5: -0.0625rem 0.0625rem 0.3125rem 0.25rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 5px 4px
+  6: -0.0625rem 0.0625rem 0.375rem 0.3125rem rgba(0, 0, 0, 0.2),
+  // 1px 1px 6px 5px
+) !default;
+$-text-shadows: (
+  1: 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.2),
+  // 0 1px 1px
+  2: 0 0.125rem 0.0625rem rgba(0, 0, 0, 0.2),
+  // 0 2px 1px
+  3: 0 0.1875rem 0.125rem rgba(0, 0, 0, 0.2),
+  // 0 3px 2px
+  4: 0 0.25rem 0.125rem rgba(0, 0, 0, 0.2),
+  // 0 4px 2px
+  5: 0 0.3125rem 0.1875rem rgba(0, 0, 0, 0.2),
+  // 0 5px 3px
+  6: 0 0.375rem 0.25rem rgba(0, 0, 0, 0.2),
+  // 0 6px 4px
+) !default;
+$-scales: (
+  1: scale(1.1),
+  2: scale(2.2),
+  3: scale(1.3),
+  4: scale(1.5),
+  5: scale(1.7),
+) !default;
+$-float-heights: (
+  1: translateY(-0.125rem),
+  // -2px
+  2: translateY(-0.1875rem),
+  // -3px
+  3: translateY(-0.3125rem),
+  // -5px
+  4: translateY(-0.4375rem),
+  // -7px
+  5: translateY(-0.625rem),
+  // -10px
+) !default;
+$-skew-degrees: (
+  1: skew(5deg),
+  2: skew(10deg),
+  3: skew(20deg),
+  4: skew(35deg),
+  5: skew(45deg),
+) !default;
+$-skew-degrees-ccw: (
+  1: skew(-5deg),
+  2: skew(-10deg),
+  3: skew(-20deg),
+  4: skew(-35deg),
+  5: skew(-45deg),
+) !default;
+```
 
 ## Version
 
-**Current Version**: 1.0.3
+**Current Version**: 1.0.4
 
 ## Utility Classes
 
