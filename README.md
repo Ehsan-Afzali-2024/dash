@@ -6,7 +6,7 @@
 
 ## Version
 
-**Current Version**: 1.0.4
+**Current Version**: 1.0.5
 
 ## Using Dash.css as a CSS Framework
 
