@@ -4,6 +4,10 @@
 
 **Dash.css** is a simple, lightweight (31 KB gzipped), and highly configurable CSS framework designed to streamline web development. It can be utilized as both a CSS framework and an SCSS framework. This file provides an overview of the available utility classes, organized by their functionality.
 
+## Version
+
+**Current Version**: 1.0.4
+
 ## Using Dash.css as a CSS Framework
 
 To get started, simply copy the `dist/css/dash.min.css` file into your project and begin your development journey! You can customize the framework by editing the `src/config.scss` file. For example, you can modify the `$-prefix` variable from `-` to `_`, change color names, and more.
@@ -15,6 +19,17 @@ npm start
 ```
 
 Please note that this command will not modify the development file located at `dist/css/dash.css`; instead, it will generate a new version of `dist/css/dash.min.css` and `dist/css/dash.min.css.map` based on your custom configurations.
+
+**CDN Source**
+
+You can easily use Dash.css by including it directly in your HTML file without any customization:
+
+```html
+<link
+  href="https://unpkg.com/@ehsan-afzali-2024/dash_css@1.0.0/dist/css/dash.min.css"
+  rel="stylesheet"
+/>
+```
 
 ## Using Dash.css as an SCSS Framework
 
@@ -539,10 +554,6 @@ $-skew-degrees-ccw: (
   5: skew(-45deg),
 ) !default;
 ```
-
-## Version
-
-**Current Version**: 1.0.4
 
 ## Utility Classes
 
